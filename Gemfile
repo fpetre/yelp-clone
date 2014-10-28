@@ -41,8 +41,6 @@ gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'debugger'
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
 end
 
  group :development do
@@ -53,6 +51,8 @@ end
  end
 
  group :test do
+   gem 'rspec-rails'
+   gem 'factory_girl_rails'
    gem 'shoulda-matchers', require: false
    gem 'faker'
    gem 'guard-rspec'

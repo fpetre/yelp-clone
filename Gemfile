@@ -36,12 +36,27 @@ gem 'spring',        group: :development
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
- gem 'debugger', group: [:development, :test]
+
+group :development, :test do
+  gem 'debugger'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
 
  group :development do
    gem 'better_errors'
    gem 'binding_of_caller'
    gem 'pry-rails'
    gem 'quiet_assets'
+ end
+
+ group :test do
+   gem 'shoulda-matchers', require: false
+   gem 'faker'
+   gem 'guard-rspec'
+   gem 'capybara'
+   gem 'database_cleaner', "1.0.1"
+   gem "launchy"
+   gem 'selenium-webdriver'
  end
 

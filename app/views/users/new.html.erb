@@ -1,14 +1,3 @@
 <h1>Sign Up</h1>
 
-<form action="<%= users_url %>" method="POST">
-	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-	<label for="user-name">User Name</label>
-	<input id="user-name" name="user[username]">
-
-	<label for="user-password">Password</label>
-	<input type="password" for="user-password" name="user[password]">
-
-	<input type="submit" value="Sign Up">
-
-</form>
+<%= render partial: "form", locals: {user: @user} %>

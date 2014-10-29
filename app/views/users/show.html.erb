@@ -1,3 +1,17 @@
 <h1><%=  @user.username %></h1>
 
 <a href="<%= edit_user_url(@user) %>">Edit User Info</a>
+
+<ul>
+<% @user.reviews.try(:each) do |review| %>
+  <li>
+    <a href="<%= business_url(review.business) %>">
+      <%= review.business.name %>
+    </a> <br>
+    Rating:<%= review.rating %> <br>
+    <%= review.content %>
+  </li>
+<% end %>
+</ul>
+
+<a href="<%= new_business_url %>">Add a Business</a>

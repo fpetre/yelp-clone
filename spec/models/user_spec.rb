@@ -1,5 +1,5 @@
 require_relative '../spec_helper'
-require 'factory_girl'
+
 
 describe User do
   it "has a valid factory" do

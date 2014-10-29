@@ -1,0 +1,24 @@
+<h1><%= @business.name %></h1>
+
+<ul>
+    <li> <%= @business.country %></li
+    <li> <%= @business.city %></li>
+    <li> <%= @business.state %></li>
+    <li> <%= @business.zip %></li>
+    <li> <%= @business.phone_number %></li>
+    <li> <%= @business.website_address %></li>
+</ul>
+
+
+<ul>
+<% @business.reviews.try(:each) do |review| %>
+  <li>
+    <a href="<%= user_url(review.user) %>"><%= review.user.username %></a> <br>
+    Rating:<%= review.rating %> <br>
+    <%= review.content %>
+  </li>
+<% end %>
+</ul>
+
+<a href=<%= edit_business_url(@business) %>>Edit</a>
+<a href=" <%= new_business_review_url(@business) %>">Write a Review</a>

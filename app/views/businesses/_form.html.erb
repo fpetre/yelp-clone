@@ -9,8 +9,8 @@
   name="authenticity_token"
   value="<%= form_authenticity_token %>">
 
-	<label for="business-country">Country</label>
-	<select id="business-country" name="businesses[country]">
+	<label for="cities-country">Country</label>
+	<select id="cities-country" name="cities[country]">
     <option selected value="United States">United States</option>
 	</select> <br>
 
@@ -22,13 +22,14 @@
 	<input id="business-address" name="businesses[address]"
   value="<%= business.address %>"> <br>
 
-	<label for="business-state">State</label>
-	<input id="business-state" name="businesses[state]"
-  value="<%= business.state %>"> <br>
+	<label for="cities-name">City</label>
+	<input id="cities-name" name="cities[name]"
+  value="<%= city.name %>"> <br>
 
-	<label for="business-city">City</label>
-	<input id="business-city" name="businesses[city]"
-  value="<%= business.city %>"> <br>
+	<label for="cities-state">State</label>
+	<input id="cities-state" name="cities[state]"
+  value="<%= city.state %>"> <br>
+
 
 	<label for="business-zip">zip</label>
 	<input id="business-zip" name="businesses[zip]"

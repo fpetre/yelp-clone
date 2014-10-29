@@ -1,5 +1,5 @@
 class City < ActiveRecord::Base
-  validates :name, :country, :state, presence: true
+  validates :city_name, :country, :state, presence: true
 
   has_many(
   :businesses,

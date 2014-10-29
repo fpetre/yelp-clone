@@ -12,10 +12,7 @@ class BusinessesController < ApplicationController
     if @business.save
       redirect_to business_url(@business)
     else
-      business_errors = @business.errors.full_messages.delete_if do |error|
-         error == "City can't be blank"
-      end
-      flash.now[:errors] = business_errors + @city.errors.full_messages
+      flash.now[:errors] = @business.errors.full_messages + @city.errors.full_messages
       render :new
     end
   end
@@ -32,10 +29,7 @@ class BusinessesController < ApplicationController
     if @business.update(business_params) && @city.update(city_params)
       redirect_to business_url(@business)
     else
-      business_errors = @business.errors.full_messages.delete_if do |error|
-         error == "City can't be blank"
-      end
-      flash.now[:errors] = business_errors + @city.errors.full_messages
+      flash.now[:errors] = @business.errors.full_messages + @city.errors.full_messages
       render :edit
     end
   end

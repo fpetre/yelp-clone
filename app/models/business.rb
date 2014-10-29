@@ -1,5 +1,5 @@
 class Business < ActiveRecord::Base
-  validates :name, :city_id, :zip, :address, presence: true
+  validates :name, :city, :zip, :address, presence: true
   validates :zip, length: {minimum: 5}
 
   has_many :reviews, inverse_of: :business

@@ -6,7 +6,12 @@ class BusinessesController < ApplicationController
   end
 
   def create
-    @business = Business.new(business_params)
+    @city = City.find_or_create_by({
+      country: business_params[:country],
+      name: business_params[:city],
+      state: business_params[:state]
+      })
+      @business = @city.businesses.new(business_params)
     if @business.save
       redirect_to business_url(@business)
     else

@@ -19,18 +19,21 @@
 
   <label>Rate</label> <br>
   <input type="radio" id="rating-1" name="reviews[rating]" value="1"
-  <%= checked if 1 == review.rating %>> 1
+  <% if 1 == review.rating %> checked <% end %>> 1
   <input type="radio" id="rating-2" name="reviews[rating]" value="2"
-  <%= checked if 2 == review.rating %>> 2
+  <% if 2 == review.rating %>checked <% end %>> 2
   <input type="radio" id="rating-3" name="reviews[rating]" value="3"
-  <%= checked if 3 == review.rating %>> 3
+  <% if 3 == review.rating %> checked <% end %>> 3
   <input type="radio" id="rating-4" name="reviews[rating]" value="4"
-  <%= checked if 4 == review.rating %>> 4
+  <% if 4 == review.rating %> checked <% end %>> 4
+
   <input type="radio" id="rating-5" name="reviews[rating]" value="5"
-  <%= checked if 5 == review.rating %>> 5
+  <% if 5 == review.rating %> checked <% end %>> 5
   <br>
 	<label for="review-content">Your Review</label>
-	<textarea type="review-content" name="reviews[content]"></textarea>
+	<textarea type="review-content" name="reviews[content]"
+  value="<%= review.content %>"><%= review.content %>
+	</textarea>
 
 	<input type="submit" value="<%= submit_value %>">
 </form>

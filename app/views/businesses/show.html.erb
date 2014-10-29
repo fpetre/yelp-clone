@@ -2,6 +2,7 @@
 
 <ul>
     <li> <%= @business.country %></li
+    <li> <%= @business.address %></li
     <li> <%= @business.city %></li>
     <li> <%= @business.state %></li>
     <li> <%= @business.zip %></li>
@@ -13,6 +14,9 @@
 <ul>
 <% @business.reviews.try(:each) do |review| %>
   <li>
+    <% if logged_in? && current_user.reviews.exists?(review) %>
+      <a href="<%= edit_review_url(review) %>">Edit</a>
+    <% end %>
     <a href="<%= user_url(review.user) %>"><%= review.user.username %></a> <br>
     Rating:<%= review.rating %> <br>
     <%= review.content %>

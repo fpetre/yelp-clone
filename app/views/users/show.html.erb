@@ -5,6 +5,9 @@
 <ul>
 <% @user.reviews.try(:each) do |review| %>
   <li>
+    <% if logged_in? && current_user.reviews.exists?(review) %>
+      <a href="<%= edit_review_url(review) %>">Edit</a>
+    <% end %>
     <a href="<%= business_url(review.business) %>">
       <%= review.business.name %>
     </a> <br>

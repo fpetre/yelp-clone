@@ -1,5 +1,5 @@
 class Business < ActiveRecord::Base
-  validates :name, :country, :city, :state, :zip, presence: true
+  validates :name, :country, :city, :state, :zip, :address, presence: true
   validates :zip, length: {minimum: 5}
   validates :country, uniqueness: { scope: [:city, :state, :zip]}
   after_initialize :ensure_country

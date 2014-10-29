@@ -15,22 +15,32 @@
 	</select> <br>
 
 	<label for="business-name">Business Name</label>
-	<input id="business-name" name="businesses[name]"> <br>
+	<input id="business-name" name="businesses[name]"
+  value="<%= business.name %>"> <br>
+
+	<label for="business-address">Address</label>
+	<input id="business-address" name="businesses[address]"
+  value="<%= business.address %>"> <br>
 
 	<label for="business-state">State</label>
-	<input id="business-state" name="businesses[state]"> <br>
+	<input id="business-state" name="businesses[state]"
+  value="<%= business.state %>"> <br>
 
 	<label for="business-city">City</label>
-	<input id="business-city" name="businesses[city]"> <br>
+	<input id="business-city" name="businesses[city]"
+  value="<%= business.city %>"> <br>
 
 	<label for="business-zip">zip</label>
-	<input id="business-zip" name="businesses[zip]"> <br>
+	<input id="business-zip" name="businesses[zip]"
+  value="<%= business.zip %>"> <br>
 
 	<label for="business-phone-number">Phone Number</label>
-	<input id="business-phone-number" name="businesses[phone_number]"> <br>
+	<input id="business-phone-number" name="businesses[phone_number]"
+  value="<%= business.phone_number %>"> <br>
 
-	<label for="business-webiste-address">Website Address</label>
-	<input id="business-website-address" name="businesses[website_address]"> <br>
+	<label for="business-website-address">Website Address</label>
+	<input id="business-website-address" name="businesses[website_address]"
+  value="<%= business.website_address %>"> <br>
 
 	<input type="submit" value="<%= submit_value %>">
 </form>

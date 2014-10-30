@@ -36,6 +36,8 @@ gem 'spring',        group: :development
 
 # Use debugger
 
+gem 'backbone-on-rails'
+
 gem 'rails_12factor', group: :production
 
 group :development, :test do

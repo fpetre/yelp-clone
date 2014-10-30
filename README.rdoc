@@ -29,6 +29,9 @@ Please feel free to use a different markup language if you do not plan to run
 
 
 Todo
+implement business average rating
+di backbone: start with basic backone for business show page: and maybe search
+make it so that if you log in while going somewher it takes you there
 unique cities
 implement hours
 add model specs

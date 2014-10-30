@@ -39,15 +39,19 @@ class BusinessesController < ApplicationController
     render :show
   end
 
+  def index
+    render :index
+  end
+
   private
   def business_params
-    params.require(:businesses).permit(
+    params.require(:business).permit(
     :name, :zip, :phone_number, :address, :website_address
     )
   end
 
   def city_params
-    params.require(:cities).permit(:country, :city_name, :state)
+    params.require(:city).permit(:country, :city_name, :state)
   end
 
 end

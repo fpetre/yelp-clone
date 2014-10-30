@@ -42,11 +42,13 @@ class ReviewsController < ApplicationController
   private
   def no_double_review
     business_id = (params[:business_id] || review_params[:business_id])
-    flash[:errors] = ["cant create more than one review for the same business"]
-    redirect_to user_url(current_user) if current_user.reviews.exists?(business_id: business_id)
+    if current_user.reviews.exists?(business_id: business_id)
+      flash[:errors] = ["cant create more than one review for the same business"]
+      redirect_to user_url(current_user)
+    end
   end
 
   def review_params
-    params.require(:reviews).permit(:content, :rating, :business_id)
+    params.require(:review).permit(:content, :rating, :business_id)
   end
 end

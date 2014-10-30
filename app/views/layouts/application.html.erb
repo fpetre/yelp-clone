@@ -11,6 +11,7 @@
     <% if logged_in?  %>
       <h1><a href="<%= user_url(current_user) %>">
       <%= current_user.username %></a></h1>
+      <a href="<%= user_url(current_user) %>">About Me</a>
       <form action="<%= session_url %>" method="POST">
         <input type="hidden"
         name="authenticity_token"
@@ -22,6 +23,8 @@
       <a href="<%= new_user_url %>"> Sign Up </a>
       <br>
       <a href="<%= new_session_url %>"> Sign In</a>
+      <br>
+      <a href="<%= new_session_url %>">About Me</a>
     <% end %>
   </nav>
   <% flash[:errors].try(:each) do |error| %>

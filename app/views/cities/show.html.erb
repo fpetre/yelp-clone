@@ -1,0 +1,17 @@
+<h1>Yelp <%= @city.city_name %></h1>
+
+<h2>Businesses in: <%= @city.city_name %></h2>
+<ul>
+  <% @city.businesses.each do |business| %>
+    <a href=" <%= new_business_review_url(business) %>">Write a Review</a>
+    <li> <a href="<%= business_url(business) %>"><%= business.name %></a> </li>
+    <li> <%= business.city.country %> </li>
+    <li> <%= business.address %> </li>
+    <li> <%= business.city.city_name %> </li>
+    <li> <%= business.city.state %> </li>
+    <li> <%= business.zip %> </li>
+    <li> <%= business.phone_number %> </li>
+    <li> <%= business.website_address %> </li>
+    <br>
+  <% end %>
+</ul>

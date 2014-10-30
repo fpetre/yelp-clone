@@ -19,7 +19,7 @@ class BusinessesController < ApplicationController
 
   def edit
     @business = Business.find(params[:id])
-    @city = @business.city
+    @city = City.find_or_create_by(city_name: @business.city)
     render :edit
   end
 

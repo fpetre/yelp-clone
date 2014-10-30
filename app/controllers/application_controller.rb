@@ -20,6 +20,10 @@ class ApplicationController < ActionController::Base
       !!current_user
     end
 
+    def current_city
+      @current_city = City.find_by_city_name("Brooklyn")
+    end
+
     def current_user
       @current_user ||= User.find_by_session_token(session[:token])
     end

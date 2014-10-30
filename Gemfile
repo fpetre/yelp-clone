@@ -43,6 +43,7 @@ group :development, :test do
 end
 
  group :development do
+   gem 'seed_dump'
    gem 'better_errors'
    gem 'binding_of_caller'
    gem 'pry-rails'

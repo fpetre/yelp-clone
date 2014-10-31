@@ -1,5 +1,15 @@
-<h1> All Businesses </h1>
-<h1> Select From the List Below or Search Again </h1>
+
+<h1> Which Business Would You Like to Review?</h1>
+
+      <div class="yelp-reviews-search">
+        <form action="<%= search_url %>" method="GET">
+          <input type="text" name="name_query" value="<%= params[:name_query] %>" placeholder="Business Name">
+          <input type="hidden" name="search-type" value="review-search">
+          <input type="text" name="location_query" value="<%= params[:location_query] %>" placeholder="City, state, address">
+          <input type="submit">
+        </form>
+      </div>
+
 
 <ul>
   <% Business.all.each do |business| %>

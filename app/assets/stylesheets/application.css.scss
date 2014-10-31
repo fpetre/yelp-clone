@@ -36,12 +36,27 @@ ul {
   list-style: none;
 }
 
+.yelp-nav-search {
+  width: 870px  ;
+  float: left;
+  border: 2px solid blue;
+}
+
+.yelp-reviews-search{
+
+  width: 308px;
+  margin: 0 auto;
+  background: yellow;
+}
+
 .yelp-header {
   background: #af0606 url(//s3-media1.ak.yelpcdn.com/assets/2/www/img/7ccfbbb81622/structural/header_stars.png) no-repeat center;
   height: 77px;
 }
 
 .header-nav {
+  padding-left: 20px;
+  padding-right: 20px;
   border: 2px solid blue;
   width: 1022px;
   margin: 0 auto;
@@ -50,12 +65,14 @@ ul {
 }
 
 .logo {
+  height:100%;
+  background: yellow;
   float: left;
 }
 
 .sign-up-sign-in {
-  margin-right: 20px;
   margin-top: 20px;
+  margin-right: 19px;
   border: 2px solid blue;
   float: right;
 }
@@ -69,6 +86,11 @@ ul {
 }
 
 .nav-links {
+  float: left;
+  background: yellow;
+  width: 870px;
+  display: block;
+
 }
 
 .main-content {

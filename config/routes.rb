@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   root to: 'cities#show'
+
+  get "/search", as: :search, to: "static_pages#search"
+  get "/writeareview", as: :review_search, to: "reviews#search"
+
   resources :cities, only: [:show]
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show, :edit, :update]

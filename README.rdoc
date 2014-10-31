@@ -29,6 +29,7 @@ Please feel free to use a different markup language if you do not plan to run
 
 
 Todo
+fix search
 do css
 add search functionality for main page and for adding reviews
 facebook login

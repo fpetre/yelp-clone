@@ -1,0 +1,28 @@
+<h1>Select From the List Below or Search Again</h1>
+
+<div class="yelp-reviews-search">
+  <form action="<%= search_url %>" method="GET">
+    <input type="text" name="name_query" value="<%= params[:name_query] %>" placeholder="Business Name">
+    <input type="hidden" name="search_type" value="review-search">
+    <input type="text" name="location_query" value="<%= params[:location_query] %>" placeholder="City, state, address">
+    <input type="submit">
+  </form>
+</div>
+
+
+
+<ul>
+  <% @search.each do |business| %>
+    <a href=" <%= new_business_review_url(business) %>">Write a Review</a>
+    <li> <a href="<%= business_url(business) %>"><%= business.name %></a> </li>
+    <li> Rating: <%= business.average_rating %> </li>
+    <li> <%= business.city.country %> </li>
+    <li> <%= business.address %> </li>
+    <li> <%= business.city.city_name %> </li>
+    <li> <%= business.city.state %> </li>
+    <li> <%= business.zip %> </li>
+    <li> <%= business.phone_number %> </li>
+    <li> <%= business.website_address %> </li>
+    <br>
+  <% end %>
+</ul>

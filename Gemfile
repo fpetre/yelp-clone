@@ -38,6 +38,8 @@ gem 'spring',        group: :development
 
 gem 'backbone-on-rails'
 
+gem 'pg_search'
+
 gem 'rails_12factor', group: :production
 
 group :development, :test do

@@ -2,6 +2,10 @@ class ReviewsController < ApplicationController
   before_action :require_signed_in!
   before_action :no_double_review, only: [:new, :create]
 
+  def search
+    render :search
+  end
+
   def new
     @review = Review.new({business_id: params[:business_id]})
     render :new

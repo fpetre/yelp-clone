@@ -12,12 +12,23 @@
 
 
     <nav class="header-nav group">
-      <div class="logo">yelp</div>
+      <a href="/" class="logo">yelp</a>
+      <div class="yelp-nav-search group">
+        <form action="<%= search_url %>" method="GET">
+          <input type="hidden" name="search_type" value="business-search">
+          <input type="text" name="name_query" value="<%= params[:name_query] %>" placeholder="Business Name">
+          <input type="text" name="location_query" value="<%= params[:location_query] %>" placeholder="City, state, address">
+          <input type="submit">
+        </form>
+      </div>
+
 
       <% if logged_in?  %>
         <h1><a href="<%= user_url(current_user) %>">
         <%= current_user.username %></a></h1>
-        <a href="<%= user_url(current_user) %>">About Me</a>
+        <div class="nav-links group">
+          <a href="<%= user_url(current_user) %>">About Me</a>
+        </div>
         <form action="<%= session_url %>" method="POST">
           <input type="hidden"
           name="authenticity_token"
@@ -30,7 +41,7 @@
           <a class="signup" href="<%= new_user_url %>"> Sign Up </a>
           <a class="signin" href="<%= new_session_url %>"> Sign In</a>
         </div>
-        <div class="nav-links">
+        <div class="nav-links group">
           <a href="<%= new_session_url %>">About Me</a>
         </div>
       <% end %>

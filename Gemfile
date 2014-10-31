@@ -41,6 +41,7 @@ gem 'backbone-on-rails'
 gem 'pg_search'
 
 gem 'kaminari'
+gem 'faker'
 
 gem 'rails_12factor', group: :production
 
@@ -60,7 +61,6 @@ end
    gem 'rspec-rails'
    gem 'factory_girl_rails'
    gem 'shoulda-matchers', require: false
-   gem 'faker'
    gem 'guard-rspec'
    gem 'capybara'
    gem 'database_cleaner', "1.0.1"

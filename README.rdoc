@@ -29,16 +29,16 @@ Please feel free to use a different markup language if you do not plan to run
 
 
 Todo
-
-do backbone: start with basic backbone for business show page: and maybe search
-past 7 do css and implement search
-make it so that if you log in while going somewher it takes you there
-bug:fix heroku edit business
+do css
+add search functionality for main page and for adding reviews
+facebook login
+do backbone: start with basic backbone start with users
+make it so that if you log in while going somewhere it takes you there
 add delete to reviews
 add address api, or use tomis zip code list
 unique cities
 implement hours
 add model specs
-add search functionality for main page and for adding reviews
+
 create user profile model
 

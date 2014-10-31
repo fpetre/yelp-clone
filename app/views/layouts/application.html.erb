@@ -7,32 +7,42 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
-    <% if logged_in?  %>
-      <h1><a href="<%= user_url(current_user) %>">
-      <%= current_user.username %></a></h1>
-      <a href="<%= user_url(current_user) %>">About Me</a>
-      <form action="<%= session_url %>" method="POST">
-        <input type="hidden"
-        name="authenticity_token"
-        value="<%= form_authenticity_token %>">
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Log Out">
-      </form>
-    <% else %>
-      <a href="<%= new_user_url %>"> Sign Up </a>
-      <br>
-      <a href="<%= new_session_url %>"> Sign In</a>
-      <br>
-      <a href="<%= new_session_url %>">About Me</a>
-    <% end %>
-  </nav>
+  <header class="yelp-header">
+
+
+
+    <nav class="header-nav group">
+      <div class="logo">yelp</div>
+
+      <% if logged_in?  %>
+        <h1><a href="<%= user_url(current_user) %>">
+        <%= current_user.username %></a></h1>
+        <a href="<%= user_url(current_user) %>">About Me</a>
+        <form action="<%= session_url %>" method="POST">
+          <input type="hidden"
+          name="authenticity_token"
+          value="<%= form_authenticity_token %>">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Log Out">
+        </form>
+      <% else %>
+        <div class="sign-up-sign-in group">
+          <a class="signup" href="<%= new_user_url %>"> Sign Up </a>
+          <a class="signin" href="<%= new_session_url %>"> Sign In</a>
+        </div>
+        <div class="nav-links">
+          <a href="<%= new_session_url %>">About Me</a>
+        </div>
+      <% end %>
+    </nav>
+  </header>
+
   <% flash[:errors].try(:each) do |error| %>
     <h2><%= error %></h2>
   <% end %>
 
 
-  <main>
+  <main class="main-content group">
     <%= yield %>
   </main>
 </body>

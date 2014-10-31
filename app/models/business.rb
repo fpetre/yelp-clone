@@ -6,7 +6,7 @@ class Business < ActiveRecord::Base
 
   # change it so it uses join table
   pg_search_scope :search_by_name, :against => :name
-  pg_search_scope :search_by_location, :against => [:name, :address], :associated_against => {
+  pg_search_scope :search_by_location_and_name, :against => [:name, :address], :associated_against => {
 
     :city => [:city_name, :country, :state]
   }

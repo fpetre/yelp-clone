@@ -1,3 +1,5 @@
+require 'faker'
+Faker::Config.locale = 'en-US'
 
 city1 = City.create!({city_name: "Hoboken", country: "United States", state: "New Jersey"})
 city2 = City.create!({city_name: "Brooklyn", country: "United States", state: "New York"})
@@ -22,7 +24,28 @@ Review.create!([
 Review.create!({content:"mike wrote this", rating: 1, user_id: user2.id, business_id: b1.id})
 Review.create!({content:"KC wrote this", rating: 3, user_id: user3.id, business_id: b1.id})
 
+11.times do
+  City.create!({city_name: Faker::Address.city, country: "United States", state: Faker::Address.state})
+end
+
+11.times do
+  User.create!({username: Faker::Name.name, password: Faker::Internet.password(8) })
+end
+
+10.times do
+Business.create!({
+  name: Faker::Company.name,
+  zip: Faker::Address.zip,
+  phone_number: Faker::PhoneNumber.phone_number,
+  website_address: Faker::Internet.domain_name,
+  address: Faker::Address.street_address,
+  city_id: rand(10) + 1
+  })
+end
 
 
 
+10.times do
+  Review.create!({content:Faker::Lorem.paragraph, rating: rand(5) + 1 , user_id: rand(10) + 1, business_id: rand(10) + 1})
+end
 

@@ -6,7 +6,7 @@ YelpClone.Collections.Businesses = Backbone.Collection.extend ({
   getOrFetch: function(id) {
     var business = YelpClone.Collections.businesses.get(id);
     if (business) {
-      business.fetch()
+      business.fetch();
     } else {
       business = new YelpClone.Models.Business({id: id});
       business.fetch({ success: function()

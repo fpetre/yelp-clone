@@ -9,7 +9,7 @@
   </form>
 </div>
 
-
+<%= paginate @search, :params => {:controller => 'static_pages', :action => 'search'} %>
 
 <ul>
   <% @search.each do |business| %>

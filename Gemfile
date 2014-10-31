@@ -40,6 +40,8 @@ gem 'backbone-on-rails'
 
 gem 'pg_search'
 
+gem 'kaminari'
+
 gem 'rails_12factor', group: :production
 
 group :development, :test do

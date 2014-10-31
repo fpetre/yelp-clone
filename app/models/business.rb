@@ -5,6 +5,7 @@ class Business < ActiveRecord::Base
   validates :zip, length: {minimum: 5}
 
   # change it so it uses join table
+
   pg_search_scope :search_by_name, :against => :name
   pg_search_scope :search_by_location_and_name, :against => [:name, :address], :associated_against => {
 
@@ -18,7 +19,16 @@ class Business < ActiveRecord::Base
     @rating = self.reviews.average(:rating).try(:to_int)
   end
 
-
+  # def self.search_by_name_and_address
+  #   Business.find_by_sql(<<-SQL)
+  #   SELECT
+  #     businesses.*
+  #   FROM
+  #     businesses
+  #   WHERE
+  #   business.name =
+  #   SQL
+  # end
 
 end
 

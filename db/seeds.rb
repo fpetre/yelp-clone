@@ -24,28 +24,28 @@ Review.create!([
 Review.create!({content:"mike wrote this", rating: 1, user_id: user2.id, business_id: b1.id})
 Review.create!({content:"KC wrote this", rating: 3, user_id: user3.id, business_id: b1.id})
 
-11.times do
+101.times do
   City.create!({city_name: Faker::Address.city, country: "United States", state: Faker::Address.state})
 end
 
-11.times do
+101.times do
   User.create!({username: Faker::Name.name, password: Faker::Internet.password(8) })
 end
 
-10.times do
+101.times do
 Business.create!({
   name: Faker::Company.name,
   zip: Faker::Address.zip,
   phone_number: Faker::PhoneNumber.phone_number,
   website_address: Faker::Internet.domain_name,
   address: Faker::Address.street_address,
-  city_id: rand(10) + 1
+  city_id: rand(100) + 1
   })
 end
 
 
 
-10.times do
-  Review.create!({content:Faker::Lorem.paragraph, rating: rand(5) + 1 , user_id: rand(10) + 1, business_id: rand(10) + 1})
+100.times do
+  Review.create!({content:Faker::Lorem.paragraph, rating: rand(5) + 1 , user_id: rand(100) + 1, business_id: rand(100) + 1})
 end
 

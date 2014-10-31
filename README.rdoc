@@ -30,8 +30,11 @@ Please feel free to use a different markup language if you do not plan to run
 
 Todo
 
-do backbone: start with basic backone for business show page: and maybe search
+do backbone: start with basic backbone for business show page: and maybe search
+past 7 do css and implement search
 make it so that if you log in while going somewher it takes you there
+bug:fix heroku edit business
+add delete to reviews
 add address api, or use tomis zip code list
 unique cities
 implement hours

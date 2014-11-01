@@ -1,8 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def search
-    query = params[:name_query] + " " + params[:location_query]
-    @search = Business.search_by_location_and_name(query).page params[:page]
+    @search = Business.search_by_name_and_address(params[:name_query], params[:location_query], params[:page], 10)
 
     if params[:search_type] == "business-search"
       render :business_search

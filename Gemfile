@@ -42,6 +42,7 @@ gem 'pg_search'
 
 gem 'kaminari'
 gem 'faker'
+gem 'will_paginate'
 
 gem 'rails_12factor', group: :production
 

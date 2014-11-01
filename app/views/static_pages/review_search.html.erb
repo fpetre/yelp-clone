@@ -9,8 +9,7 @@
   </form>
 </div>
 
-<%= paginate @search, :params => {:controller => 'static_pages', :action => 'search'} %>
-
+<%= will_paginate @search %>
 <ul>
   <% @search.each do |business| %>
     <a href=" <%= new_business_review_url(business) %>">Write a Review</a>

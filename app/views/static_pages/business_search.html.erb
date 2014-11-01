@@ -1,6 +1,4 @@
-
-<h1><%= paginate @search %></h1>
-
+<%= will_paginate @search %>
 <ul>
   <% @search.each do |business| %>
     <a href=" <%= new_business_review_url(business) %>">Write a Review</a>

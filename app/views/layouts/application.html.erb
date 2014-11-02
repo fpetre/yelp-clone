@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script id="currentuser" data-id="<%= logged_in? ? current_user.id : "none"  %>"></script>
   <title>YelpClone</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>

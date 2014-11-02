@@ -1,5 +1,5 @@
-YelpClone.Views.BusinessShow = Backbone.View.extend({
-  template: JST["businesses/show"],
+YelpClone.Views.UserShow = Backbone.View.extend({
+  template: JST["users/show"],
   reviewTemplate: JST["reviews/show"],
 
   initialize: function() {
@@ -7,10 +7,10 @@ YelpClone.Views.BusinessShow = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(this.template({business: this.model}));
+    this.$el.html(this.template({user: this.model}));
     var show = this;
     this.model.reviews().each( function(review){
-      show.$el.find("#business-reviews").append(show.reviewTemplate({review: review}));
+      show.$el.find("#user-reviews").append(show.reviewTemplate({review: review}));
     });
     return this;
   }

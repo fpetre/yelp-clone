@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   resources :reviews, only: [:create, :edit, :update, :destroy]
 
   namespace :api, :defaults => {format: :JSON } do
+    resources :users, only: [:show, :index]
     resources :businesses, only: [:show, :index]
+    resources :reviews, only: [:update, :create, :show]
+
   end
 end
 

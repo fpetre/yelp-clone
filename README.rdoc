@@ -29,11 +29,10 @@ Please feel free to use a different markup language if you do not plan to run
 
 
 Todo
-fix search
-do css
-add search functionality for main page and for adding reviews
-facebook login
 do backbone: start with basic backbone start with users
+do css
+facebook login
+
 make it so that if you log in while going somewhere it takes you there
 add delete to reviews
 add address api, or use tomis zip code list

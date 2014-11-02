@@ -4,14 +4,17 @@ YelpClone.Collections.Businesses = Backbone.Collection.extend ({
   model: YelpClone.Models.Business,
 
   getOrFetch: function(id) {
-    var business = YelpClone.Collections.businesses.get(id);
+    var business = this.get(id);
+    var businesses = this;
+    console.log("im here!")
+
     if (business) {
       business.fetch();
     } else {
       business = new YelpClone.Models.Business({id: id});
       business.fetch({ success: function()
         {
-        YelpClone.Collections.businesses.add(business);
+        businesses.add(business);
         }
       });
     }
@@ -22,4 +25,3 @@ YelpClone.Collections.Businesses = Backbone.Collection.extend ({
 
 });
 
-YelpClone.Collections.businesses = new YelpClone.Collections.Businesses();

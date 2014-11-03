@@ -32,6 +32,7 @@ Todo
 do backbone: start with basic backbone start with users
 do css
 facebook login
+ask about using partials for jbuilder?
 
 make it so that if you log in while going somewhere it takes you there
 add delete to reviews

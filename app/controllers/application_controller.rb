@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     end
 
     def current_city
-      @current_city = City.find_by_city_name("Brooklyn")
+      @current_city = City.includes(:businesses => :reviews).find_by_city_name("Brooklyn")
     end
 
     def current_user

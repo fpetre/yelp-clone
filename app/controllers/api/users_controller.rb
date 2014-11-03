@@ -1,12 +1,12 @@
 class Api::UsersController < ApplicationController
 
   def show
-    @users = User.includes(:reviews).find(params[:id])
+    @user = User.includes(:reviews => :business).find(params[:id])
     render :show
   end
 
   def index
-    @users = User.all.includes(:reviews)
+    @users = User.all.includes(:reviews => :business)
     render :index
   end
 

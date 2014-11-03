@@ -8,7 +8,13 @@ class Business < ActiveRecord::Base
   belongs_to :city, inverse_of: :businesses
 
   def average_rating
-    @rating = self.reviews.average(:rating).try(:to_int)
+
+   total_ratings = self.reviews.inject(0) do |rating_total, review|
+     rating_total + review.rating
+    end
+    return 0 if self.reviews.size < 1
+    @rating = total_ratings / self.reviews.size
+
   end
 
   #@users =  User.paginate_by_sql(sql, :page => @page, :per_page => @per_page)

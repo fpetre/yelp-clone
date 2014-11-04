@@ -47,7 +47,7 @@ gem 'will_paginate'
 gem 'rails_12factor', group: :production
 
 group :development, :test do
-  gem 'debugger'
+  gem 'byebug'
 end
 
  group :development do
@@ -68,4 +68,3 @@ end
    gem "launchy"
    gem 'selenium-webdriver'
  end
-

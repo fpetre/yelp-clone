@@ -29,16 +29,14 @@ Please feel free to use a different markup language if you do not plan to run
 
 
 Todo
-write session controller in api, have it return json current user, use jquery cutom ajax request to send post request
-
-
-add validations, put loged in check inside router, save state and redirect after log in
+add navbar in backbone
 
 ask about using partials for jbuilder?
 ask about passing in business id to backbone router
 do backbone: start with basic backbone start with users
 do css
 facebook login
+add backbone validations
 
 
 make it so that if you log in while going somewhere it takes you there
@@ -49,4 +47,3 @@ implement hours
 add model specs
 
 create user profile model
-

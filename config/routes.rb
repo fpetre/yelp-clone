@@ -20,5 +20,3 @@ Rails.application.routes.draw do
     resources :cities, only: [:show, :index]
   end
 end
-
-

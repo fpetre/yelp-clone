@@ -5,28 +5,83 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
   },
 
   routes: {
+    "" : "cityShow",
+    "session/new" : "sessionNew",
+    "business/new" : "businessNew",
+    "reviews/:businessId/new" : "reviewsNew",
+    "business/:id/edit" : "businessEdit",
+    "reviews/:id/:businessId/edit" : "reviewsEdit",
     "business/:id": "businessShow",
     "users/:id": "userShow"
   },
 
+  cityShow: function () {
+    var city = YelpClone.currentCity;
+    var cityShowView = new YelpClone.Views.CityShow({model: city});
+    this._swapView(cityShowView);
+  },
+
+  businessNew: function () {
+
+  },
+
+  businessEdit: function (id) {
+
+  },
 
   businessShow: function (id) {
     var business = YelpClone.Collections.businesses.getOrFetch(id);
-    var businessView = new YelpClone.Views.BusinessShow({model: business});
-    this._swapView(businessView);
+    var businessShowView = new YelpClone.Views.BusinessShow({model: business});
+    this._swapView(businessShowView);
   },
 
+  reviewsNew: function (businessId) {
+    if(!YelpClone.loggedIn) {
+      YelpClone.currentUser.navigateInfo = {url: "reviews/" + businessId + "/new"};
+      Backbone.history.navigate("session/new", {trigger: true});
+    }
+    this._resetNavigateInfo();
+    var review = new YelpClone.Models.Review();
+    var reviewNewView = new YelpClone.Views.ReviewForm({
+      model: review, businessId: businessId
+    });
+    this._swapView(reviewNewView);
 
-  userShow: function (id) {
-    var user = YelpClone.Users.currentUser
-    var userView = new YelpClone.Views.UserShow({model: user});
-    this._swapView(userView);
+  },
+
+  reviewsEdit: function (id, businessId) {
+    var reviews = new YelpClone.Collections.Reviews();
+    var router = this;
+    reviews.fetch({success: function(reviews){
+      var review = review.getOrFetch(id);
+      var reviewEditView = new YelpClone.Views.ReviewForm({
+        model: review, businessId: businessId
+      });
+      router._swapView(reviewEditView);
+    }});
+  },
+
+  sessionNew: function () {
+    var sessionNewView = new YelpClone.views.SessionNew();
+    this._swapView(sessionNewView);
+  }
+
+  userShow: function () {
+    var user = YelpClone.currentUser
+    var userShowView = new YelpClone.Views.UserShow({model: user});
+    this._swapView(userShowView);
+  },
+
+  _resetNavigateInfo: function {
+     if(YelpClone.currentUser.navigateInfo){
+       YelpClone.currentUser.navigateInfo = {};
+     }
   },
 
   _swapView: function(view) {
-    this.currentView && this.currentView.remove();
-    this.currentView = view;
-    this.$rootEl.html(this.currentView.render().$el);
+    this._currentView && this._currentView.remove();
+    this._currentView = view;
+    this.$rootEl.html(this._currentView.render().$el);
   }
 
 

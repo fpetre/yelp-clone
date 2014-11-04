@@ -1,0 +1,23 @@
+<h1>This is Backbone!!!</h1>
+<h1>Yelp <%= city.escape("city_name") %></h1>
+
+<h2>Businesses in: <%= city.escape("city_name") %></h2>
+<ul>
+  <% city.businesses().each(function(business) { %>
+    <a href=<%= "#reviews/" + business.id + "/new" %>>Write a Review</a>
+    <li>
+      <a href="#business/<%= business.id %>">
+        <%= business.escape("name") %>
+      </a>
+    </li>
+    <li> Rating: <%= business.escape("average_rating") %> </li>
+    <li> <%= city.escape("country") %> </li>
+    <li> <%= business.escape("address") %> </li>
+    <li> <%= city.escape("city_name") %> </li>
+    <li> <%= city.escape("state") %> </li>
+    <li> <%= business.escape("zip") %> </li>
+    <li> <%= business.escape("phone_number") %> </li>
+    <li> <%= business.escape("website_address") %> </li>
+    <br>
+  <% }) %>
+</ul>

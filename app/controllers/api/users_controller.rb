@@ -10,6 +10,4 @@ class Api::UsersController < ApplicationController
     render :index
   end
 
-
-
 end

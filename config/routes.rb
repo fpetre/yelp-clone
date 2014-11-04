@@ -13,10 +13,11 @@ Rails.application.routes.draw do
   resources :reviews, only: [:create, :edit, :update, :destroy]
 
   namespace :api, :defaults => {format: :JSON } do
+    resource :session, only: [:create, :destroy]
     resources :users, only: [:show, :index]
     resources :businesses, only: [:show, :index]
     resources :reviews, only: [:update, :create, :show]
-
+    resources :cities, only: [:show, :index]
   end
 end
 

@@ -1,0 +1,34 @@
+<% if (review.isNew()) { %>
+  <h1>Complete your review:</h1>
+<% } else { %>
+  <h1>Edit Your Review:</h1>
+<% } %>
+<h2>
+  <a href="<%= "business/" + business.id %>"><%= business.escape("name") %></a>
+</h2>
+
+<form>
+  <input type="hidden"
+    name="review[business_id]"
+    value="<%= business.id %>">
+
+
+  <label>Rate</label> <br>
+  <input type="radio" id="rating-1" name="review[rating]" value="1"
+  <% if (1 == review.escape("rating")) { %> checked <% } %>> 1
+  <input type="radio" id="rating-2" name="review[rating]" value="2"
+  <% if (2 == review.escape("rating")) { %>checked <% } %>> 2
+  <input type="radio" id="rating-3" name="review[rating]" value="3"
+  <% if (3 == review.escape("rating")) { %> checked <% } %>> 3
+  <input type="radio" id="rating-4" name="review[rating]" value="4"
+  <% if (4 == review.escape("rating")) { %> checked <% } %>> 4
+  <input type="radio" id="rating-5" name="review[rating]" value="5"
+  <% if (5 == review.escape("rating")) { %> checked <% } %>> 5
+  <br>
+	<label for="review-content">Your Review</label>
+	<textarea type="review-content" name="review[content]"
+  value="<%= review.content %>"><%= review.escape("content") %>
+	</textarea>
+
+	<input type="submit" value="<%= review.isNew ? "Post": "Edit"  %>">
+</form>

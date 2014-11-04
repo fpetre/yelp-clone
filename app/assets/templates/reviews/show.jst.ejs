@@ -1,10 +1,15 @@
-  <li>
-    <% if (YelpClone.loggedIn && YelpClone.currentUser.reviews.get(review.id)) { %>
+
+  <li class="review">
+    <br>
+<% if (YelpClone.loggedIn && YelpClone.currentUser.reviews().get(review.id)) { %>
       <a href="#">Edit</a>
     <% } %>
     <a href="#">
       <%= review.escape("businessname") %>
-    </a> <br>
-    Rating:<%= review.escape("rating") %> <br>
+    </a>
+    <br>
+    Rating:<%= review.escape("rating") %>
+    <br>
     <%= review.escape("content") %>
+    <br>
   </li>

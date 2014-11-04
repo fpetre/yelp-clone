@@ -3,17 +3,17 @@ YelpClone.Models.User = Backbone.Model.extend({
 
   reviews: function() {
     if(!this._reviews) {
-      this._reviews = new YelpClone.Collections.Reviews()
+      this._reviews = new YelpClone.Collections.Reviews();
     }
-    return this._reviews
+    return this._reviews;
   },
 
   parse: function(params) {
     if (params.reviews) {
-      this.reviews().set(params.reviews, {parse: true})
-      delete params.reviews
+      this.reviews().set(params.reviews, {parse: true});
+      delete params.reviews;
     }
-    return params
+    return params;
   }
 
 });

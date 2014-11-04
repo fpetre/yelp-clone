@@ -6,8 +6,10 @@ class Api::BusinessesController < ApplicationController
     if @business.update(business_params) && @city.update(city_params)
       render :show
     else
-      render :json => {error: @business.errors.full_messages + @city.errors.full_messages}
-      render :show
+      render(
+       :json => {error: @business.errors.full_messages + @city.errors.full_messages},
+         :status => :unprocessable_entity
+       )
     end
   end
 
@@ -17,8 +19,10 @@ class Api::BusinessesController < ApplicationController
     if @business.save
       render :show
     else
-      render :json => {error: @business.errors.full_messages + @city.errors.full_messages}
-      render :show
+      render(
+      :json => {error: @business.errors.full_messages + @city.errors.full_messages},
+        :status => :unprocessable_entity
+      )
     end
   end
 

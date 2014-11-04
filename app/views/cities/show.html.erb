@@ -5,7 +5,6 @@
   <% @city.businesses.each do |business| %>
     <a href=" <%= new_business_review_url(business) %>">Write a Review</a>
     <li> <a href="<%= business_url(business) %>"><%= business.name %></a> </li>
-    <li> <a href="#business/<%= business.id %>"><%= business.name %>backbone</a> </li>
     <li> Rating: <%= business.average_rating %> </li>
     <li> <%= business.city.country %> </li>
     <li> <%= business.address %> </li>

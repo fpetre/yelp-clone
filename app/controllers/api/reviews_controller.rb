@@ -1,11 +1,14 @@
 class Api::ReviewsController < ApplicationController
+  before_action :require_signed_in!
+  before_action :no_double_review, only: [:new, :create]
 
   def create
     @review = current_user.reviews.new(review_params)
     if @review.save
       render :show
     else
-      render :json => {error: @review.errors.full_messages}
+      render :json => {error: @review.errors.full_messages},
+        :status => :unprocessable_entity
     end
   end
 
@@ -14,7 +17,8 @@ class Api::ReviewsController < ApplicationController
     if @review.update(review_params)
       render :show
     else
-      render :json => {error: @review.errors.full_messages}
+      render :json => {error: @review.errors.full_messages},
+        :status => :unprocessable_entity
     end
   end
 

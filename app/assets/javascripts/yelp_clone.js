@@ -20,9 +20,7 @@ window.YelpClone = {
     Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  YelpClone.initialize();
-});
-
-
+//
+// $(document).ready(function(){
+//   YelpClone.initialize();
+// });

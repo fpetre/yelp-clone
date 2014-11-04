@@ -13,8 +13,6 @@
 <body>
   <header class="yelp-header">
 
-
-
     <nav class="header-nav group">
       <a href="/" class="logo">yelp</a>
       <div class="yelp-nav-search group">
@@ -25,7 +23,6 @@
           <input type="submit">
         </form>
       </div>
-
 
       <% if logged_in?  %>
         <h1><a href="<%= user_url(current_user) %>">

@@ -36,10 +36,12 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
   },
 
   reviewsNew: function (businessId) {
+    debugger
     if(!YelpClone.loggedIn) {
       YelpClone.currentUser.navigateInfo = {url: "reviews/" + businessId + "/new"};
       Backbone.history.navigate("session/new", {trigger: true});
     }
+    debugger
     this._resetNavigateInfo();
     var review = new YelpClone.Models.Review();
     var reviewNewView = new YelpClone.Views.ReviewForm({
@@ -62,9 +64,9 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
   },
 
   sessionNew: function () {
-    var sessionNewView = new YelpClone.views.SessionNew();
+    var sessionNewView = new YelpClone.Views.SessionNew();
     this._swapView(sessionNewView);
-  }
+  },
 
   userShow: function () {
     var user = YelpClone.currentUser
@@ -72,9 +74,9 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
     this._swapView(userShowView);
   },
 
-  _resetNavigateInfo: function {
+  _resetNavigateInfo: function () {
      if(YelpClone.currentUser.navigateInfo){
-       YelpClone.currentUser.navigateInfo = {};
+       YelpClone.currentUser.navigateInfo = null;
      }
   },
 

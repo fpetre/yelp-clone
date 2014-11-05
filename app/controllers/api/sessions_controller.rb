@@ -19,7 +19,7 @@ class Api::SessionsController < ApplicationController
 
     def destroy
       logout
-      render :json => "successfully logged out", status: 200
+      render :json => {success: "successfully logged out"}
     end
 
     private

@@ -12,7 +12,9 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
     "business/:id/edit" : "businessEdit",
     "reviews/:id/:businessId/edit" : "reviewsEdit",
     "business/:id": "businessShow",
-    "users/:id": "userShow"
+    "users/:id": "userShow",
+    "user/new": "userNew",
+
   },
 
   cityShow: function () {
@@ -36,7 +38,7 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
   },
 
   reviewsNew: function (businessId) {
-    if(!YelpClone.loggedIn) {
+    if(!YelpClone.loggedIn()) {
       YelpClone.navigateInfo = {url: "reviews/" + businessId + "/new"};
       return Backbone.history.navigate("session/new", {trigger: true});
     }

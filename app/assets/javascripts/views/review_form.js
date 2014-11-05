@@ -15,15 +15,21 @@ YelpClone.Views.ReviewForm = Backbone.View.extend({
     var review = new YelpClone.Models.Review(params);
     review.save({}, {
 
-      failure: function(){
-        console.log("failed");
+      error: function(model,response){
+        view.renderErrors(response);
       },
-
-
-      success: function(){
-
+      success: function(review){
+        view.business.reviews.add(review);
+        YelpClone.Collections.businesses.add(view.business);
         Backbone.history.navigate("users/"+ YelpClone.currentUser.id, {trigger: true})
       }});
+  },
+
+
+  renderErrors: function(response){
+    this.$el.html(this.errorTemplate({message: response.responseText}));
+    this.$el.append(this.template());
+    return this;
   },
 
   render: function() {

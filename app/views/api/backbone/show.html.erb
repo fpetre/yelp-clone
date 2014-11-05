@@ -1,0 +1,12 @@
+
+
+
+<script>
+$(document).ready(function(){
+   YelpClone.initialize({
+     currentUserId: <%= current_user.try(:id) %>,
+     currentCityId: <%= current_city.try(:id) %>
+     loggedIn: <%= logged_in? %>
+   });
+ });
+ </script>

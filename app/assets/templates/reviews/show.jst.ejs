@@ -1,7 +1,7 @@
 
   <li class="review">
     <br>
-<% if (YelpClone.loggedIn && YelpClone.currentUser.reviews().get(review.id)) { %>
+<% if (YelpClone.loggedIn() && YelpClone.currentUser.reviews().get(review.id)) { %>
       <a href="#">Edit</a>
     <% } %>
     <a href="#">

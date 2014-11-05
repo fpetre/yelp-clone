@@ -1,0 +1,27 @@
+
+<a href="#" class="logo">yelp</a>
+<div class="yelp-nav-search group">
+  <form id="business-search">
+    <input type="hidden" name="search_type" value="business-search">
+    <input type="text" name="name_query" placeholder="Business Name">
+    <input type="text" name="location_query" placeholder="City, state, address">
+    <input type="submit">
+  </form>
+</div>
+
+<% if(YelpClone.loggedIn()) {  %>
+  <h1><a href="<%= '#users/' + YelpClone.currentUser.id %>">
+  <%= YelpClone.currentUser.escape("username") %></a></h1>
+  <div class="nav-links group">
+    <a href="<%= '#users/' + YelpClone.currentUser.id %>">About Me</a>
+  </div>
+  <button id="log-out">Log Out</button>
+<% } else { %>
+  <div class="sign-up-sign-in group">
+    <a class="signup" href="#user/new"> Sign Up </a>
+    <a class="signin" href="#session/new"> Sign In</a>
+  </div>
+  <div class="nav-links group">
+    <a href="<%= '#session/new' %>">About Me</a>
+  </div>
+<% } %>

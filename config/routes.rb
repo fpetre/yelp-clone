@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  root to: 'cities#show'
+  #root to: 'cities#show'
+  root to: "static_pages#backbone"
 
   get "/search", as: :search, to: "static_pages#search"
   get "/writeareview", as: :review_search, to: "reviews#search"
+
 
   resources :cities, only: [:show]
   resource :session, only: [:new, :create, :destroy]

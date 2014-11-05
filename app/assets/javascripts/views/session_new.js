@@ -13,23 +13,24 @@ YelpClone.Views.SessionNew = Backbone.View.extend({
       type: "POST",
       url: "/api/session",
       data: signInParams,
-      success: function(request){
+      success: function(response){
         if (YelpClone.navigateInfo) {
-          YelpClone.loggedIn = true;
-          YelpClone.currentUser = new YelpClone.Models.User({id: request.id});
+          YelpClone.currentUser.set(response);
+          // YelpClone.currentUser = new YelpClone.Models.User({id: request.id});
           Backbone.history.navigate(YelpClone.navigateInfo.url, {trigger: true});
         } else {
+          YelpClone.currentUser.set(response);
           Backbone.history.navigate("", {trigger: true});
         }
       }.bind(this),
-      error: function(request){
-        this.renderErrors(request);
+      error: function(response){
+        this.renderErrors(response);
       }.bind(this)
     })
   },
 
-  renderErrors: function(request){
-    this.$el.html(this.errorTemplate({message: request.responseText}));
+  renderErrors: function(response){
+    this.$el.html(this.errorTemplate({message: response.responseText}));
     this.$el.append(this.template());
     return this;
   },

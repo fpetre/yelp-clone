@@ -31,6 +31,7 @@ Please feel free to use a different markup language if you do not plan to run
 Todo
 add navbar in backbone
 
+make jbuilder for api session controller create action
 ask about using partials for jbuilder?
 ask about passing in business id to backbone router
 do backbone: start with basic backbone start with users

@@ -1,0 +1,12 @@
+
+<nav id="backbone_yelp_nav_bar"></nav>
+
+<div id="backbone_main_content"> </div>
+
+<script>
+ $(document).ready(function(){
+  var $rootEl = $("#backbone_main_content");
+  var $navEl = $(".yelp-header");
+  YelpClone.initialize(<%= logged_in? %>, <%= current_user.try(:id) || "undefined" %>, <%= current_city.try(:id) %>, $rootEl, $navEl);
+ });
+ </script>

@@ -9,4 +9,9 @@ class StaticPagesController < ApplicationController
       render :review_search
     end
   end
+
+  def backbone
+    render :backbone
+  end
+
 end

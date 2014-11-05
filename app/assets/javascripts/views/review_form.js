@@ -1,5 +1,6 @@
 YelpClone.Views.ReviewForm = Backbone.View.extend({
   template: JST["reviews/form"],
+  errorTemplate: JST["helpers/errors"],
 
   initialize: function(options) {
     this.business = new YelpClone.Models.Business({id: options.businessId});
@@ -16,7 +17,7 @@ YelpClone.Views.ReviewForm = Backbone.View.extend({
     review.save({}, {
 
       error: function(model,response){
-        view.renderErrors(response);
+        YelpClone.Utils.renderErrors.bind(view)(response);
       },
       success: function(review){
         view.business.reviews.add(review);
@@ -26,11 +27,11 @@ YelpClone.Views.ReviewForm = Backbone.View.extend({
   },
 
 
-  renderErrors: function(response){
-    this.$el.html(this.errorTemplate({message: response.responseText}));
-    this.$el.append(this.template());
-    return this;
-  },
+  // renderErrors: function(response){
+  //   this.$el.html(this.errorTemplate({message: response.responseText}));
+  //   this.$el.append(this.template({review: this.model, business: this.business}));
+  //   return this;
+  // },
 
   render: function() {
     this.$el.html(this.template({review: this.model, business: this.business}));

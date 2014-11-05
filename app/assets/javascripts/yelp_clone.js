@@ -3,6 +3,7 @@ window.YelpClone = {
   Collections: {},
   Views: {},
   Routers: {},
+  Utils: {},
 
   _CreateModels: function (logedIn, currentUserId, currentCityId) {
     YelpClone.Collections.businesses = new YelpClone.Collections.Businesses();

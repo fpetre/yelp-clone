@@ -38,6 +38,8 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
   },
 
   reviewsNew: function (businessId) {
+    // check if review already exists, redirect and display error if it does
+
     if(!YelpClone.loggedIn()) {
       YelpClone.navigateInfo = {url: "reviews/" + businessId + "/new"};
       return Backbone.history.navigate("session/new", {trigger: true});

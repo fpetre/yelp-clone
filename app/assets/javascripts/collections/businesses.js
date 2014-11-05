@@ -17,10 +17,9 @@ YelpClone.Collections.Businesses = Backbone.Collection.extend ({
         }
       });
     }
-
+    console.log("fetching", business)
     return business;
   }
 
 
 });
-

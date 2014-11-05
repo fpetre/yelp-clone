@@ -1,6 +1,12 @@
 class Api::ReviewsController < ApplicationController
    before_action :no_double_review, only: [:new, :create]
 
+  def show
+    @review = Review.includes(:business).find(params[:id])
+    render :show
+  end
+
+
   def create
     @review = current_user.reviews.new(review_params)
     if @review.save

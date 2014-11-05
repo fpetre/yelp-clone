@@ -59,10 +59,9 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
   },
 
   reviewsEdit: function (id, businessId) {
-    var reviews = new YelpClone.Collections.Reviews();
+    var review = new YelpClone.Models.Review({id: id, businessId: businessId, userId: YelpClone.currentUser.id });
     var router = this;
-    reviews.fetch({success: function(reviews){
-      var review = reviews.getOrFetch(id);
+    review.fetch({success: function(review){
       var reviewEditView = new YelpClone.Views.ReviewForm({
         model: review, businessId: businessId
       });

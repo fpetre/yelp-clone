@@ -23,16 +23,10 @@ YelpClone.Views.SessionNew = Backbone.View.extend({
         }
       }.bind(this),
       error: function(response){
-        YelpClone.Utils.renderErrors.bind(this)(response);
+        YelpClone.Utils.renderErrors.bind(this)({},response);
       }.bind(this)
     })
   },
-
-  // renderErrors: function(response){
-  //   this.$el.html(this.errorTemplate({message: response.responseText}));
-  //   this.$el.append(this.template());
-  //   return this;
-  // },
 
   render: function(){
     this.$el.html(this.template());

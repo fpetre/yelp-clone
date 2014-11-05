@@ -7,25 +7,22 @@ YelpClone.Views.ReviewForm = Backbone.View.extend({
     this.business.fetch();
   },
 
-  events:{"submit form": "submit"},
+  events: {"submit form": "submit"},
 
   submit: function(event){
     var view = this;
     event.preventDefault();
     var params = $(event.currentTarget).serializeJSON();
-
-    if (this.model.isNew()) {
-      this.model.save({params},{
-
-        error: function(model,response){
-          YelpClone.Utils.renderErrors.bind(view)(response);
-        },
-        success: function(review){
-          view.business.reviews.add(review);
-          YelpClone.Collections.businesses.add(view.business);
-          Backbone.history.navigate("users/"+ YelpClone.currentUser.id, {trigger: true});
-        }});
-      }
+    this.model.save(params,{
+      error: function(model,response){
+        YelpClone.Utils.renderErrors.bind(view)({review: view.model, business: view.business}, response);
+      },
+      success: function(review){
+        view.business.reviews().add(review);
+        YelpClone.Collections.businesses.add(view.business);
+        YelpClone.currentUser.reviews().add(review);
+        Backbone.history.navigate("users/"+ YelpClone.currentUser.id, {trigger: true});
+      }});
   },
 
   render: function() {

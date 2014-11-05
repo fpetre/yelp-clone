@@ -15,6 +15,7 @@
 //= require underscore
 //= require backbone
 //= require jquery.serializejson
+//= require backbone.subset.js
 //= require yelp_clone
 //= require_tree ../templates
 //= require_tree ./helpers

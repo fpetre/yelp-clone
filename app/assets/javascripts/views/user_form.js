@@ -8,8 +8,8 @@ YelpClone.Views.UserForm = Backbone.View.extend({
     var view = this;
     event.preventDefault();
     var params = $(event.currentTarget).serializeJSON();
-    var user = new YelpClone.Models.User(params);
-    user.save({}, {
+    var user = this.model;
+    user.save(params, {
       error: function(model,response){
         YelpClone.Utils.renderErrors.bind(view)({user: model}, response);
       },

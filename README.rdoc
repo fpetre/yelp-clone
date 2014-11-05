@@ -29,7 +29,9 @@ Please feel free to use a different markup language if you do not plan to run
 
 
 Todo
-add navbar in backbone
+!!fix all forms, use isnew to update or create, check assessment solutions
+!! fix business show
+add search in backbone
 
 make jbuilder for api session controller create action
 ask about using partials for jbuilder?
@@ -38,9 +40,10 @@ do backbone: start with basic backbone start with users
 do css
 facebook login
 add backbone validations
+add many users
+figure out how to make about me redirect to your own page after log in
 
 
-make it so that if you log in while going somewhere it takes you there
 add delete to reviews
 add address api, or use tomis zip code list
 unique cities

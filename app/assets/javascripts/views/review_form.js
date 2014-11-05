@@ -13,25 +13,20 @@ YelpClone.Views.ReviewForm = Backbone.View.extend({
     var view = this;
     event.preventDefault();
     var params = $(event.currentTarget).serializeJSON();
-    var review = new YelpClone.Models.Review(params);
-    review.save({}, {
 
-      error: function(model,response){
-        YelpClone.Utils.renderErrors.bind(view)(response);
-      },
-      success: function(review){
-        view.business.reviews.add(review);
-        YelpClone.Collections.businesses.add(view.business);
-        Backbone.history.navigate("users/"+ YelpClone.currentUser.id, {trigger: true})
-      }});
+    if (this.model.isNew()) {
+      this.model.save({params},{
+
+        error: function(model,response){
+          YelpClone.Utils.renderErrors.bind(view)(response);
+        },
+        success: function(review){
+          view.business.reviews.add(review);
+          YelpClone.Collections.businesses.add(view.business);
+          Backbone.history.navigate("users/"+ YelpClone.currentUser.id, {trigger: true});
+        }});
+      }
   },
-
-
-  // renderErrors: function(response){
-  //   this.$el.html(this.errorTemplate({message: response.responseText}));
-  //   this.$el.append(this.template({review: this.model, business: this.business}));
-  //   return this;
-  // },
 
   render: function() {
     this.$el.html(this.template({review: this.model, business: this.business}));

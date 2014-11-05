@@ -1,0 +1,11 @@
+<h1><%= YelpClone.loggedIn() ? "Edit User Info" : "Sign Up" %> </h1>
+
+<form>
+  <label for="user-name">User Name</label>
+  <input id="user-name" name="user[username]" value="<%= user.escape("username") %>">
+
+  <label for="user-password">Password</label>
+  <input type="password" for="user-password" name="user[password]">
+
+  <input type="submit" value="<%= YelpClone.loggedIn() ? "Edit" : "Sign Up" %>">
+</form>

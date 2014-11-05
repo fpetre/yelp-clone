@@ -1,5 +1,5 @@
-YelpClone.Utils.renderErrors = function(response) {
+YelpClone.Utils.renderErrors = function(templateParams, response) {
   this.$el.html(this.errorTemplate({message: response.responseText}));
-  this.$el.append(this.template({review: this.model, business: this.business}));
+  this.$el.append(this.template(templateParams));
   return this;
 };

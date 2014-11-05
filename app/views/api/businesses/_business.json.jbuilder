@@ -7,5 +7,6 @@ json.country business.city.country
 json.reviews business.reviews do |review|
     json.(review, :content, :rating, :created_at, :id)
     json.businessname business.name
+    json.businessid business.id
     json.userid review.user_id
 end

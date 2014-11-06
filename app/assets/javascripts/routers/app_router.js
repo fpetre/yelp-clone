@@ -102,6 +102,7 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
   userShow: function (id) {
     //change later to have multiple users
     var user = YelpClone.currentUser;
+    user.fetch();
     var userShowView = new YelpClone.Views.UserShow({model: user});
     this._swapView(userShowView);
   },

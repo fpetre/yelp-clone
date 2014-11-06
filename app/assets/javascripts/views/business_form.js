@@ -10,11 +10,13 @@ YelpClone.Views.BusinessForm = Backbone.View.extend({
     var params = $(event.currentTarget).serializeJSON();
     this.model.save(params, {
       error: function(model, response){
-        YelpClone.Utils.renderErrors.bind(view)({business: view.model});
+        console.log("failed", response)
+        YelpClone.Utils.renderErrors.bind(view)({business: view.model}, response);
       },
       success: function(business){
+        console.log("succeeded")
         YelpClone.Collections.businesses.add(business);
-        Backbone.history.navigate("business/" + business.id);
+        Backbone.history.navigate("business/" + business.id, {trigger: true});
       }
     });
   },

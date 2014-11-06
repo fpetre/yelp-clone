@@ -29,9 +29,13 @@ Please feel free to use a different markup language if you do not plan to run
 
 
 Todo
-!!fix all forms, use isnew to update or create, check assessment solutions
-!! fix business show
-add search in backbone
+
+categories,
+pictures,
+make current city change based on search;
+user show page + profile,
+
+
 
 make jbuilder for api session controller create action
 ask about using partials for jbuilder?
@@ -41,7 +45,6 @@ do css
 facebook login
 add backbone validations
 add many users
-figure out how to make about me redirect to your own page after log in
 
 
 add delete to reviews

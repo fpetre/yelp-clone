@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     get "/search", as: :search, to: "static_pages#search"
     resource :session, only: [:create, :destroy]
     resources :users, only: [:show, :index, :create, :update]
-    resources :businesses, only: [:show, :index]
+    resources :businesses, only: [:create, :update, :show, :index]
     resources :reviews, only: [:update, :create, :show, :index]
     resources :cities, only: [:show, :index]
   end

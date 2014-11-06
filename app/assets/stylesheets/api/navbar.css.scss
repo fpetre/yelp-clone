@@ -23,6 +23,7 @@
 
 .logo {
   float: left;
+  padding-top: 8px;
 
 }
 
@@ -32,7 +33,7 @@
 
 .nav-middle {
   float: left;
-  padding: 10px 10px;
+  padding: 15px 10px 5px 10px;
 }
 
 .yelp-button-background {
@@ -86,6 +87,7 @@ ul.nav-links {
       background: #760400;
       background-opacity: .5;
       border-radius: 5px;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     }
 
 
@@ -109,6 +111,7 @@ ul.nav-links {
 
     &:hover {
       background: #760400;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     }
 
     a {
@@ -148,6 +151,7 @@ ul.nav-links {
 
       &:hover {
         background: #760400;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.3);
       }
 
 
@@ -170,6 +174,7 @@ ul.nav-links {
       background-opacity: .5;
       border-radius: 5px;
       border: 1px solid #7b0000;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     }
 
     a {

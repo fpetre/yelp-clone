@@ -6,6 +6,7 @@ YelpClone.Views.navBar = Backbone.View.extend({
 
   initialize: function() {
     this.listenTo(YelpClone.currentUser, "change", this.render);
+    this.listenTo(YelpClone.currentCity, "change", this.render);
     this.results = [];
     this.query = {name_query: "", location_query: ""};
   },
@@ -34,7 +35,7 @@ YelpClone.Views.navBar = Backbone.View.extend({
 
     if (event) {
       event.preventDefault();
-      Backbone.history.navigate("");
+      Backbone.history.navigate("#navsearch");
       this.page = 1;
       this.query = $("form#nav-business-search").serializeJSON();
       this.query["page"] = this.page;

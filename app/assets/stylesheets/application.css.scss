@@ -16,7 +16,7 @@
 
 // reset
 
-h1, h2, header, nav, main, ul, li, div, form, img, button {
+h1, h2, header, nav, main, ul, li, div, form, img, button, html, body {
   margin: 0px;
   padding: 0px;
   border: 0px;
@@ -66,12 +66,23 @@ body {
     cursor: pointer;
   }
 
+//errors
+div.errors {
+  padding: 5px 10px;
+  background: #a70e00;
+  border: 1px solid #590700;
+  border-radius: 5px;
+  h1.error-message {
+    color: #fff;
+  }
+}
+
+// main content
   .main-content {
     width: 1022px;
     margin: 0 auto;
     padding: 15px 30px 30px;
     border: 1px solid #ccccc8;
     background: #fff;
-
 
   }

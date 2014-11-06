@@ -1,13 +1,31 @@
-<h1>Sign in</h1>
 
-<form>
+<div class="log-in-page-wrapper group">
+	<div class="log-in-wrapper">
+		<h2>Log in</h2>
+		<p> Please enter your email address and password to log in. </p>
+		<form class="group">
+			<div class="input-el group">
+				<label for="session-name">User Name</label>
+				<input type="text" id="session-name" name="session[username]">
+			</div>
+			<div class="input-el group">
+				<label for="session-password">Password</label>
+				<input type="password" for="session-password" name="session[password]">
+			</div>
+			<input type="submit" value="Log in">
 
-	<label for="session-name">User Name</label>
-	<input id="session-name" name="session[username]">
+		</form>
+	</div>
 
-	<label for="session-password">Password</label>
-	<input type="password" for="session-password" name="session[password]">
-
-	<input type="submit" value="Sign in">
-
-</form>
+	<div class="no-account-wrapper">
+		<h2> No Account Yet? </h2>
+		<span>That's okay, we still love you. </span>
+		<a href="#user/new">Sign Up</a>
+		<p> Yelp is the fun and easy way to find,
+			review and talk about what's great - and not so great -
+			in your local area. It's about real people giving their
+			honest and personal opinions on everything from restaurants
+			and spas to coffee shops and bars.
+		</p>
+	</div>
+</div>

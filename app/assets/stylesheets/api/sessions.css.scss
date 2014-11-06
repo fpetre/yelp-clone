@@ -1,3 +1,100 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div.log-in-page-wrapper {
+  font-size: 12px;
+  padding: 30px 50px 20px 40px;
+
+
+  div.log-in-wrapper {
+    float: left;
+    padding: 0 80px 0 0;
+
+    h2 {
+      font-size: 16px;
+      color: #c41200;
+      font-weight: bold;
+    }
+
+    div.input-el {
+      padding-bottom: 5px;
+
+      label {
+        font-size: 16px;
+        color: #c41200;
+        font-weight: bold;
+      }
+
+      input {
+        display: block;
+        float: right;
+        height: 20px;
+        width: 150px;
+        border: 1px solid #e5e5e1;
+      }
+    }
+
+    input[type="submit"] {
+      float: right;
+      display: block;
+      padding: 5px 8px;
+      font-weight: bold;
+      font-size: 12px;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      border: 1px solid rgba(0,0,0,0.2);
+      background: linear-gradient(white, #eee);
+
+    }
+
+  }
+
+  div.no-account-wrapper {
+    float: left;
+    padding: 0 50px 20px 50px;
+    border-left: 2px solid #e5e5e1;
+    text-align: center;
+
+    h2, span, a, p {
+      padding-bottom: 5px;
+      display: block;
+    }
+
+    h2 {
+      font-size: 16px;
+      color: #c41200;
+      font-weight: bold;
+    }
+
+    a {
+
+      width: 90px;
+      margin: 0 auto;
+      border-radius: 5px;
+      background: linear-gradient(#ff2000 2%, #ea050b 10%, #d40d04);
+      display: block;
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+      text-shadow: 0 -1px 0 #760400;
+      border: 1px solid #a50508;
+
+      &:hover {
+        background: linear-gradient(#ff2000 12%, #ea050b 20%, #d40d04);
+      }
+
+
+    }
+
+    p {
+      width: 400px;
+    }
+  }
+
+
+
+}

@@ -1,7 +1,6 @@
 
 <a href="#" class="logo">
   <img src="<%= YelpClone.currentCity.escape("yelpLogoImage") %>">
-  </img>
 </a>
 <div class="nav-middle">
   <div class="yelp-nav-search group">
@@ -22,7 +21,13 @@
   </div>
   <ul class="nav-links group">
     <li>
-      <a href="<%= '#session/new' %>">About Me</a>
+      <% if (!YelpClone.loggedIn()) { %>
+        <a href="<%= '#session/new' %>">About Me</a>
+      <% } else { %>
+        <a href="<%= '#users/' + YelpClone.currentUser.id %>">
+          About Me
+        </a>
+      <% } %>
     </li>
     <li>
       <a href="#search">Write a Review</a>
@@ -30,7 +35,7 @@
   </ul>
 </div>
 
-<% if(YelpClone.loggedIn()) {  %>
+<% if (YelpClone.loggedIn()) {  %>
   <div class="user-info-log-out">
     <div class="user-info-log-out-el">
       <a href="<%= '#users/' + YelpClone.currentUser.id %>">

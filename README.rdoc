@@ -30,17 +30,19 @@ Please feel free to use a different markup language if you do not plan to run
 
 Todo
 
-categories,
-pictures,
+image_path rails helper, pass down with backbone
+background-image: url('/assets/imagename')
+
+categories, models, and join table
+pictures, file picker
 make current city change based on search;
 user show page + profile,
 
 
 
 make jbuilder for api session controller create action
-ask about using partials for jbuilder?
-ask about passing in business id to backbone router
-do backbone: start with basic backbone start with users
+
+
 do css
 facebook login
 add backbone validations

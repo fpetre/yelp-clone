@@ -16,13 +16,14 @@
 
 // reset
 
-h1, h2, header, nav, main, ul, li, div {
+h1, h2, header, nav, main, ul, li, div, form, img, button {
   margin: 0px;
   padding: 0px;
   border: 0px;
   font-style: inherit;
   background: transparent;
   color: inherit;
+  font: inherit;
 }
 
 //clearfix
@@ -36,64 +37,41 @@ ul {
   list-style: none;
 }
 
-.yelp-nav-search {
-  width: 870px;
-  float: left;
+a {
+ text-decoration: none;
 }
 
-.yelp-reviews-search{
-
-  width: 308px;
-  margin: 0 auto;
-  background: yellow;
-}
-
-.yelp-header {
-  background: #af0606 url(//s3-media1.ak.yelpcdn.com/assets/2/www/img/7ccfbbb81622/structural/header_stars.png) no-repeat center;
-  height: 77px;
-}
-
-.header-nav {
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 1022px;
-  margin: 0 auto;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-.logo {
-  height:100%;
-  float: left;
-}
-
-.sign-up-sign-in {
-  margin-top: 20px;
-  margin-right: 19px;
-  float: right;
-}
-
-.signup {
-  display: block;
-}
-
-.signin{
-  display: block;
-}
-
-.nav-links {
-  float: left;
-  width: 870px;
-  display: block;
-
-}
-
-.main-content {
-  width: 1022px;
-  margin: 0 auto;
+body {
+  font-family: sans-serif;
 }
 
 
+  input[type="text"],
+  input[type="password"],
+  input[type="submit"] {
+    -webkit-appearance: none;
+    display: inline-block;
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    width: auto;
+    font: inherit;
+    vertical-align: baseline;
+    background: transparent;
+    color: inherit;
+  }
+  input[type="submit"] {
+    cursor: pointer;
+  }
+
+  .main-content {
+    width: 1022px;
+    margin: 0 auto;
+    padding: 15px 30px 30px;
+    border: 1px solid #ccccc8;
+    background: #fff;
 
 
-
+  }

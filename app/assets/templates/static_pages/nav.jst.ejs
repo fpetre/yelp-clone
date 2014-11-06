@@ -1,27 +1,54 @@
 
-<a href="#" class="logo">yelp</a>
-<div class="yelp-nav-search group">
-  <form id="nav-business-search">
-    <input type="hidden" name="search_type" value="business-search">
-    <input type="text" name="name_query" placeholder="Business Name">
-    <input type="text" name="location_query" placeholder="City, state, address">
-    <input type="submit">
-  </form>
+<a href="#" class="logo">
+  <img src="<%= YelpClone.currentCity.escape("yelpLogoImage") %>">
+  </img>
+</a>
+<div class="nav-middle">
+  <div class="yelp-nav-search group">
+    <form id="nav-business-search">
+      <input type="hidden" name="search_type" value="business-search">
+      <div class="input">
+        <label for="search-name">Find</label>
+        <input id="search-name" type="text" name="name_query" placeholder="Business Name">
+      </div>
+      <div class="input">
+        <label for="search-location">Near</label>
+        <input id="search-location" type="text" name="location_query" placeholder="City, state, address">
+      </div>
+      <div class="yelp-button-background">
+        <input type="submit">
+      </div>
+    </form>
+  </div>
+  <ul class="nav-links group">
+    <li>
+      <a href="<%= '#session/new' %>">About Me</a>
+    </li>
+    <li>
+      <a href="#search">Write a Review</a>
+    </li>
+  </ul>
 </div>
 
 <% if(YelpClone.loggedIn()) {  %>
-  <h1><a href="<%= '#users/' + YelpClone.currentUser.id %>">
-  <%= YelpClone.currentUser.escape("username") %></a></h1>
-  <div class="nav-links group">
-    <a href="<%= '#users/' + YelpClone.currentUser.id %>">About Me</a>
+  <div class="user-info-log-out">
+    <div class="user-info-log-out-el">
+      <a href="<%= '#users/' + YelpClone.currentUser.id %>">
+        <%= YelpClone.currentUser.escape("username") %>
+      </a>
+    </div>
+    <div class="user-info-log-out-el">
+      <button id="log-out">Log Out</button>
+    </div>
   </div>
-  <button id="log-out">Log Out</button>
 <% } else { %>
   <div class="sign-up-sign-in group">
-    <a class="signup" href="#user/new"> Sign Up </a>
-    <a class="signin" href="#session/new"> Sign In</a>
+    <div class="sign-up-el">
+      <a class="signup" href="#user/new"> Sign Up </a>
+    </div>
+    <div class="sign-in-el">
+      <a class="signin" href="#session/new"> Log In</a>
+    </div>
   </div>
-  <div class="nav-links group">
-    <a href="<%= '#session/new' %>">About Me</a>
-  </div>
+
 <% } %>

@@ -1,0 +1,183 @@
+
+.yelp-nav-search {
+
+}
+
+.yelp-reviews-search{
+
+
+}
+
+.yelp-header {
+  background: #af0606 url(//s3-media1.ak.yelpcdn.com/assets/2/www/img/7ccfbbb81622/structural/header_stars.png) no-repeat center;
+
+}
+
+.header-nav {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 1022px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.logo {
+  float: left;
+
+}
+
+.logo > img {
+
+}
+
+.nav-middle {
+  float: left;
+  padding: 10px 10px;
+}
+
+.yelp-button-background {
+  padding-bottom: 0;
+  display: block;
+  width: 40px;
+  float: left;
+  border-radius: 3px;
+  border: 1px solid #7b0000;
+  background: linear-gradient(#be0100 4%, #a20000 5%, #7c0000);
+
+  &:hover {
+    background: #760400;
+  }
+}
+
+form#nav-business-search > div > input[type="submit"] {
+  cursor: pointer;
+  font-weight: bold;
+  padding-top: 24px;
+  overflow: hidden;
+  display: block;
+  width: 40px;
+  height: 0px;
+  background: image-url('yelp_sprite_sheet.png') no-repeat 8px -1578px;
+
+}
+
+
+.input {
+  border: 1px solid #a70000;
+  background: white;
+  width: 300px;
+  float: left;
+  margin-right: 20px;
+}
+
+.input > label {
+  display: inline-block;
+  padding: 5px 0 5px 5px;
+  font-weight: bold;
+  cursor: default;
+}
+
+ul.nav-links {
+  li {
+    float: left;
+    padding: 5px 10px;
+
+    &:hover {
+      background: #760400;
+      background-opacity: .5;
+      border-radius: 5px;
+    }
+
+
+    a {
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
+
+.user-info-log-out {
+  float: left;
+
+  .user-info-log-out-el {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #7b0000;
+    background: linear-gradient(#be0100 4%, #a20000 5%, #7c0000);
+    cursor: pointer;
+
+    &:hover {
+      background: #760400;
+    }
+
+    a {
+      font-size: 14 px;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+
+    }
+
+    button {
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+
+
+    }
+  }
+
+
+
+}
+
+
+.sign-up-sign-in {
+  float: left;
+
+
+  .sign-up-el {
+    margin: 5px;
+    padding: 5px 15px 5px 15px;
+    border-radius: 3px;
+    border: 1px solid #7b0000;
+    background: linear-gradient(#be0100 4%, #a20000 5%, #7c0000);
+    cursor: pointer;
+
+      &:hover {
+        background: #760400;
+      }
+
+
+    .signup {
+      display: block;
+      font-size: 14 px;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+
+    }
+  }
+
+  .sign-in-el {
+    margin: 5px 0 5px 20px;
+    width: 60px;
+
+    &:hover {
+      background: #760400;
+      background-opacity: .5;
+      border-radius: 5px;
+      border: 1px solid #7b0000;
+    }
+
+    a {
+      padding: 5px;
+      text-decoration: none;
+      color: white;
+
+    }
+  }
+
+}

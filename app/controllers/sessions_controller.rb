@@ -34,4 +34,3 @@ end
     params.require(:session).permit([:username, :password])
   end
 end
-

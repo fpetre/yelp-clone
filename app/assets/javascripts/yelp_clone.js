@@ -6,6 +6,8 @@ window.YelpClone = {
   Utils: {},
 
   _CreateModels: function (logedIn, currentUserId, currentCityId) {
+    YelpClone.Collections.reviews = new YelpClone.Collections.Reviews();
+    YelpClone.Collections.reviews.fetch();
     YelpClone.Collections.businesses = new YelpClone.Collections.Businesses();
     YelpClone.Collections.businesses.fetch();
     // var cityId = $('#current-city-and-user').data('city-id');

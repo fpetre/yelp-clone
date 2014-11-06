@@ -1,15 +1,20 @@
 YelpClone.Views.navBar = Backbone.View.extend({
   template: JST["static_pages/nav"],
+  searchTemplate: JST['static_pages/search'],
   tagName: "nav",
   className: "header-nav group",
 
   initialize: function() {
     this.listenTo(YelpClone.currentUser, "change", this.render);
+    this.results = [];
+    this.query = {name_query: "", location_query: ""};
   },
 
   events: {
-    "submit form#business-search" : "businessSearch",
-    "click button#log-out" : "logOut"
+    "submit form#nav-business-search" : "businessSearch",
+    "click button#log-out" : "logOut",
+    "click button#next" : "next",
+    "click button#prev" : "prev"
   },
 
   logOut: function(event) {
@@ -25,8 +30,52 @@ YelpClone.Views.navBar = Backbone.View.extend({
   },
 
   businessSearch: function(event) {
-    event.preventDefault();
+    var view = this;
 
+    if (event) {
+      event.preventDefault();
+      Backbone.history.navigate("");
+      this.page = 1;
+      this.query = $("form#nav-business-search").serializeJSON();
+      this.query["page"] = this.page;
+    }
+
+    this.query["page"] = this.page;
+    $.ajax({
+      type: "GET",
+      url: "/api/search",
+      dataType: "json",
+      data: this.query,
+      success: function(response){
+         view.results = response;
+         view.renderSearch();
+      }
+    });
+
+
+  },
+
+  next: function() {
+    if (this.page  < this.totalPages) {
+      this.page++;
+    }
+    this.search();
+  },
+
+  prev: function() {
+    if (this.page > 1 ) {
+      this.page--;
+    }
+    this.search();
+  },
+
+  _totalPages: function () {
+    return (Math.floor(this.results.length / 10) + 1);
+  },
+
+  renderSearch: function () {
+    $("div#backbone_main_content").html(this.searchTemplate({results: this.results, totalPages: this._totalPages(), navBar: true}));
+    return this;
   },
 
   render: function(){

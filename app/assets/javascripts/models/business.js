@@ -3,7 +3,7 @@ YelpClone.Models.Business = Backbone.Model.extend({
 
   reviews: function() {
     if(!this._reviews) {
-      this._reviews = new YelpClone.Collections.Reviews();
+      this._reviews = new YelpClone.Collections.ReviewsSubset([], {parentCollection: YelpClone.Collections.reviews});
     }
     return this._reviews;
   },

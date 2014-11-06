@@ -36,9 +36,10 @@ gem 'spring',        group: :development
 
 # Use debugger
 
-gem 'backbone-on-rails'
 
 gem 'pg_search'
+
+gem 'ejs'
 
 gem 'kaminari'
 gem 'faker'

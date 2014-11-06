@@ -18,9 +18,9 @@ YelpClone.Views.ReviewForm = Backbone.View.extend({
         YelpClone.Utils.renderErrors.bind(view)({review: view.model, business: view.business}, response);
       },
       success: function(review){
-        view.business.reviews().add(review);
+        view.business.reviews().add(review, {merge: true});
         YelpClone.Collections.businesses.add(view.business);
-        YelpClone.currentUser.reviews().add(review);
+        YelpClone.currentUser.reviews().add(review, {merge: true});
         Backbone.history.navigate("users/"+ YelpClone.currentUser.id, {trigger: true});
       }});
   },

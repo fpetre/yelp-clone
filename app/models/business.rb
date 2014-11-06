@@ -17,7 +17,7 @@ class Business < ActiveRecord::Base
 
   end
 
-  #@users =  User.paginate_by_sql(sql, :page => @page, :per_page => @per_page)
+
   def self.search_by_name_and_address(name_query, address_query, page, per_page)
     name_query = name_query == "" ? "%" : "%" + name_query + "%"
     address_query = address_query == "" ? "%" : "%" + address_query + "%"
@@ -30,4 +30,3 @@ class Business < ActiveRecord::Base
       )
   end
 end
-

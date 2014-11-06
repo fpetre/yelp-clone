@@ -2,9 +2,9 @@
   <li class="review">
     <br>
 <% if (YelpClone.loggedIn() && YelpClone.currentUser.reviews().get(review.id)) { %>
-      <a href=<%= "#reviews/" + review.id + "/" + review.get("businessid") + "/edit" %>>Edit</a>
+      <a href=<%= "#reviews/" + review.id + "/" + review.get("business_id") + "/edit" %>>Edit</a>
     <% } %>
-    <a href=<%= "#business/" + review.get("businessid") %>>
+    <a href=<%= "#business/" + review.get("business_id") %>>
       <%= review.escape("businessname") %>
     </a>
     <br>

@@ -6,6 +6,7 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
 
   routes: {
     "" : "cityShow",
+    "search" : "search",
     "session/new" : "sessionNew",
     "business/new" : "businessNew",
     "user/new": "userNew",
@@ -16,6 +17,12 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
     "business/:id": "businessShow",
     "users/:id": "userShow"
 
+  },
+
+
+  search: function () {
+    var searchView = new YelpClone.Views.Search();
+    this._swapView(searchView);
   },
 
   cityShow: function () {

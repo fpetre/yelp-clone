@@ -1,5 +1,5 @@
 
-json.cities @cities do |city|
+json.array! @cities do |city|
   json.(city, :id, :city_name)
 
   json.businesses city.businesses do |business|

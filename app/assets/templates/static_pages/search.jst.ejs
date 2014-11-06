@@ -1,0 +1,37 @@
+
+<% if(!navBar) { %>
+  <h1>Select From the List Below or Search Again</h1>
+
+  <div class="yelp-reviews-search">
+    <form class="yelp-reviews-search-form">
+      <input type="text" name="name_query" placeholder="Business Name">
+      <input type="text" name="location_query" placeholder="City, state, address">
+      <input type="submit">
+    </form>
+  </div>
+<% } %>
+
+<% if (results.length > 0 ) { %>
+  <button id="prev">prev</button>
+    <%  for (var i = 0; i < totalPages; i++) {  %>
+      <a class="search-page"> <%= i > 0 ? i : ""  %> </a>
+    <% }  %>
+  <button id="next">next</button>
+  <% }  %>
+
+
+<ul class="search-results">
+  <% results.forEach( function (business) { %>
+    <a href=" <%= "#reviews/" + business.id + "/new" %>">Write a Review</a>
+    <li> <a href="<%= "#business/" + business.id %>"><%= business.name %></a> </li>
+    <li> Rating: <%= business.average_rating %> </li>
+    <li> <%= business.country %> </li>
+    <li> <%= business.address %> </li>
+    <li> <%= business.city_name %> </li>
+    <li> <%= business.state %> </li>
+    <li> <%= business.zip %> </li>
+    <li> <%= business.phone_number %> </li>
+    <li> <%= business.website_address %> </li>
+    <br>
+  <% }) %>
+</ul>

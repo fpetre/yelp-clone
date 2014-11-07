@@ -85,55 +85,6 @@ ul.city-businesses {
     ul.city-business-elements {
       float: left;
 
-      li.rating-0 {
-        height: 0;
-        padding-top: 20px;
-        background: red;
-        overflow: hidden;
-        background: image-url('stars_map.png') no-repeat 0 0;
-      }
-
-      li.rating-1 {
-        height: 0;
-        padding-top: 20px;
-        background: red;
-        overflow: hidden;
-        background: image-url('stars_map.png') no-repeat 0px -30px;
-      }
-
-      li.rating-2 {
-        height: 0;
-        padding-top: 20px;
-        background: red;
-        overflow: hidden;
-        background: image-url('stars_map.png') no-repeat 0px -60px;
-      }
-
-
-      li.rating-3 {
-        height: 0;
-        padding-top: 20px;
-        background: red;
-        overflow: hidden;
-        background: image-url('stars_map.png') no-repeat 0px -90px;
-      }
-
-      li.rating-4 {
-        height: 0;
-        padding-top: 20px;
-        background: red;
-        overflow: hidden;
-        background: image-url('stars_map.png') no-repeat 0px -120px;
-      }
-
-      li.rating-5 {
-        height: 0;
-        padding-top: 20px;
-        background: red;
-        overflow: hidden;
-        background: image-url('stars_map.png') no-repeat 0px -163px;
-      }
-
     }
 
     p.review{

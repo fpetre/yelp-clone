@@ -1,0 +1,54 @@
+
+div.business-business-header{
+  padding-top: 20px;
+
+
+  div.business-business-header-info {
+    float: left;
+    h1 {
+      font-size: 30px;
+      color: #333;
+      text-shadow: 0 1px rgba(255,255,255,0.7);
+      font-weight: bold;
+
+    }
+
+  }
+  a.write-review-wrapper {
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: block;
+    float: right;
+    margin-right: 300px;
+    background-image: linear-gradient(#ff2000 2%, #ea050b 10%, #d40d04);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    text-shadow: 0 -1px 0 #760400;
+    border: 1px solid #a50508;
+
+    i.write-review-icon {
+      display: block;
+      float: left;
+      width: 30px;
+      height: 0;
+      padding-top: 25px;
+      background: image-url('yelp_sprite_sheet.png') no-repeat 0 -3580px;
+      overflow: hidden;
+
+    }
+
+    span.write-review-text {
+      text-shadow: 0 -1px 0 #760400;
+      padding-top: 5px;
+      display: block;
+      float: left;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+
+}
+
+div.business-business-info {
+  padding-top: 10px;
+}

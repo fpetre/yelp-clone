@@ -10,6 +10,7 @@
   </ul>
 </div>
 
+<% if (!YelpClone.loggedIn()) { %>
 <div class="create-free-account">
   <div class="content">
     <h2> Yelp is the best way to find great local businesses </h2>
@@ -21,6 +22,7 @@
     <a href="#user/new"> Create Your Free Account </a>
   </div>
 </div>
+<% }  %>
 
 <h2 class="city-businesses-heading">
   Businesses in: <%= city.escape("city_name") %>
@@ -36,7 +38,9 @@
               <%= business.escape("name") %>
             </a>
           </li>
-          <li class="<%='rating-' + business.escape("average_rating") %>"> Rating: <%= business.escape("average_rating") %> </li>
+          <li class="<%='rating-' + business.escape("average_rating") %>">
+            Rating: <%= business.escape("average_rating") %>
+          </li>
           <li> City: <%= city.escape("city_name") %> </li>
           <li> State: <%= city.escape("state") %> </li>
           <li> Address: <%= business.escape("address") %> </li>

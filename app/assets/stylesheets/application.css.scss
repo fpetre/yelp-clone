@@ -86,3 +86,63 @@ div.errors {
     background: #fff;
 
   }
+
+
+
+
+// star ratings
+
+.rating-0 {
+  width: 90px;
+  height: 0;
+  padding-top: 20px;
+  background: red;
+  overflow: hidden;
+  background: image-url('stars_map.png') no-repeat 0 0;
+}
+
+.rating-1 {
+  height: 0;
+  width: 90px;
+  padding-top: 20px;
+  background: red;
+  overflow: hidden;
+  background: image-url('stars_map.png') no-repeat 0px -18px;
+}
+
+.rating-2 {
+  height: 0;
+  width: 90px;
+  padding-top: 20px;
+  background: red;
+  overflow: hidden;
+  background: image-url('stars_map.png') no-repeat 0px -55px;
+}
+
+
+.rating-3 {
+  height: 0;
+  width: 90px;
+  padding-top: 20px;
+  background: red;
+  overflow: hidden;
+  background: image-url('stars_map.png') no-repeat 0px -90px;
+}
+
+.rating-4 {
+  height: 0;
+  width: 90px;
+  padding-top: 20px;
+  background: red;
+  overflow: hidden;
+  background: image-url('stars_map.png') no-repeat 0px -125px;
+}
+
+.rating-5 {
+  height: 0;
+  width: 90px;
+  padding-top: 20px;
+  background: red;
+  overflow: hidden;
+  background: image-url('stars_map.png') no-repeat 0px -163px;
+}

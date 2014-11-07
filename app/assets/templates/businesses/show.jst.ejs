@@ -1,15 +1,29 @@
-<h1><%= business.get("name") %></h1>
-<a href=<%= "#business/" + business.id + "/edit"%>> Edit </a>
-<ul>
-    <li> Rating: <%= business.escape("average_rating") %></li>
-    <li> Country: <%= business.escape("country") %> </li>
-    <li> Address: <%= business.escape("address") %></li>
-    <li> City: <%= business.escape("city") %> </li>
-    <li> State: <%=  business.escape("state") %> </li>
-    <li> Zip: <%= business.escape("zip") %></li>
-    <li> Phone#: <%= business.escape("phone_number") %></li>
-    <li> Website: <%= business.escape("website_address") %></li>
-</ul>
 
+<div class="business-business-header group">
+  <div class="business-business-header-info">
+    <h1><%= business.get("name") %></h1>
+    <div class="<%='rating-' + business.escape("average_rating") %>">
+      Rating: <%= business.escape("average_rating") %>
+    </div>
+    <a href=<%= "#business/" + business.id + "/edit"%>> Edit </a>
+  </div>
+
+  <a href="<%= '#reviews/' + business.id + '/new' %>" class="write-review-wrapper">
+    <i class="write-review-icon"> icon</i>
+    <span class="write-review-text">Write a Review</span>
+  </a>
+</div>
+
+<div class="business-business-info">
+  <ul>
+      <li> Country: <%= business.escape("country") %> </li>
+      <li> Address: <%= business.escape("address") %></li>
+      <li> City: <%= business.escape("city") %> </li>
+      <li> State: <%=  business.escape("state") %> </li>
+      <li> Zip: <%= business.escape("zip") %></li>
+      <li> Phone#: <%= business.escape("phone_number") %></li>
+      <li> Website: <%= business.escape("website_address") %></li>
+  </ul>
+</div>
 
 <ul id="business-reviews"></ul>

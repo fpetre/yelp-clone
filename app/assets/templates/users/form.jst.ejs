@@ -1,6 +1,11 @@
 <h1><%= YelpClone.loggedIn() ? "Edit User Info" : "Sign Up" %> </h1>
 
 <form>
+  <label for="profile-photo">Profile Photo</label>
+  <input type="file" name="user[profile_photo]" class="my-photo-upload">
+
+
+
   <label for="user-name">User Name</label>
   <input id="user-name" name="user[username]" value="<%= user.escape("username") %>">
 

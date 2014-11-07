@@ -36,6 +36,11 @@ gem 'spring',        group: :development
 
 # Use debugger
 
+gem 'figaro'
+
+gem "paperclip"
+gem "aws-sdk"
+
 
 gem 'pg_search'
 

@@ -6,6 +6,8 @@ window.YelpClone = {
   Utils: {},
 
   _CreateModels: function (logedIn, currentUserId, currentCityId) {
+    YelpClone.Collections.cities = new YelpClone.Collections.Cities();
+    YelpClone.Collections.cities.fetch();
     YelpClone.Collections.reviews = new YelpClone.Collections.Reviews();
     YelpClone.Collections.reviews.fetch();
     YelpClone.Collections.businesses = new YelpClone.Collections.Businesses();

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141031132024) do
+ActiveRecord::Schema.define(version: 20141107020141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,11 +51,15 @@ ActiveRecord::Schema.define(version: 20141031132024) do
   add_index "reviews", ["user_id", "business_id"], name: "index_reviews_on_user_id_and_business_id", unique: true, using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "username",        null: false
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
+    t.string   "username",                   null: false
+    t.string   "password_digest",            null: false
+    t.string   "session_token",              null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "profile_photo_file_name"
+    t.string   "profile_photo_content_type"
+    t.integer  "profile_photo_file_size"
+    t.datetime "profile_photo_updated_at"
   end
 
   add_index "users", ["session_token"], name: "index_users_on_session_token", using: :btree

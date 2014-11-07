@@ -13,6 +13,20 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
+  has_attached_file :profile_photo, :styles => {
+    thumb: "150x>",
+    small: "300x>",
+    medium: "450x>",
+    large: "900x>"
+  }
+
+  validates_attachment_content_type(
+    :profile_photo,
+    :content_type => /\Aimage\/.*\Z/
+  )
+
+
+
   def password=(password)
     @password = password
     self.password_digest = Password.create(password)

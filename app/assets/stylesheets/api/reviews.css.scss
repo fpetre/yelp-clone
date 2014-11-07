@@ -91,6 +91,7 @@ div.review-form-rating-wrapper{
   .stars input:checked:nth-child(3) + label {
       background: green;
       width: 30px;
+      overflow-x: visible;
       background: image-url('stars_map.png') no-repeat -25px -587px;
   }
 
@@ -111,7 +112,7 @@ div.review-form-rating-wrapper{
   .stars input:checked:nth-child(9) + label {
       background: green;
       width: 30px;
-      background: image-url('stars_map.png') no-repeat -51px -737px;
+      background: image-url('stars_map.png') no-repeat -100px -738px;
   }
 
 
@@ -123,14 +124,11 @@ div.review-form-rating-wrapper{
     background: image-url('stars_map.png') no-repeat 2px -513px;
   }
 
-  .stars:hover input:nth-child(1) + label {
+  .stars input:hover:nth-child(1) + label {
       background: green;
       width: 30px;
       background: image-url('stars_map.png') no-repeat 2px -537px;
   }
-
-
-
 
 
 }

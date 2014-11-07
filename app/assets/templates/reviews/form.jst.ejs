@@ -1,22 +1,27 @@
-<% if (review.isNew()) { %>
-  <h1>Complete your review:</h1>
-<% } else { %>
-  <h1>Edit Your Review:</h1>
-<% } %>
-<h2>
-  <a href="<%= "#business/" + business.id %>">
-    <%= business.escape("name") %>
-  </a>
-</h2>
+<div class="review-business-info">
+
+  <% if (review.isNew()) { %>
+    <h1>Complete your review:</h1>
+  <% } else { %>
+    <h1>Edit Your Review:</h1>
+  <% } %>
+  <h2>
+    <a href="<%= "#business/" + business.id %>">
+      <%= business.escape("name") %>
+    </a>
+
+  </h2>
 
 
-<address class="review-form-business-address">
-<span class="business-street-address">
+  <address class="review-form-business-address">
+  <span class="business-street-address">
 
-</span>
-<span class="business-city-state">
-</span>
-</address>
+  </span>
+  <span class="business-city-state">
+  </span>
+  </address>
+
+</div>
 
 
 <form>

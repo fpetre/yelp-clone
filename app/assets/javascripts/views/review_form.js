@@ -5,6 +5,7 @@ YelpClone.Views.ReviewForm = Backbone.View.extend({
   initialize: function(options) {
     this.business = new YelpClone.Models.Business({id: options.businessId});
     this.business.fetch();
+    this.listenTo(this.business, "add change sync", this.render);
   },
 
   events: {"submit form": "submit"},

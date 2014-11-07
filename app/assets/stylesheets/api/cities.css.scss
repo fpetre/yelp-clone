@@ -1,3 +1,147 @@
 // Place all the styles related to the api/cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+div.cities {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e5e1;
+
+  h1 {
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  ul.other-cities {
+    float: right;
+
+    li {
+      float: left;
+      padding-left: 10px;
+    }
+  }
+}
+
+
+div.create-free-account{
+  margin-top: 10px;
+  border: 1px solid #fc0;
+  background: linear-gradient(white, #fdf5d6);
+  border-radius: 10px;
+
+  div.content {
+     padding: 10px;
+     background: image-url('burst_bg.png') no-repeat right bottom;
+     h2 {
+       color: #c41200;
+       font-weight: bold;
+       font-size: 24px;
+     }
+     p {
+       font-size: 16px;
+     }
+
+     a {
+       display: block;
+       text-decoration: none;
+       border-color: #a50508;
+       background: #ea050b;
+       background-image: linear-gradient(#ff2000 2%, #ea050b 10%, #d40d04);
+       padding: 10px;
+       color: white;
+       width: 200px;
+       border-radius: 5px;
+       box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+       font-weight: bold;
+
+         &:hover {
+           background-image: linear-gradient(#ff2000 10%%, #ea050b 20%, #d40d04);
+         }
+     }
+
+  }
+
+}
+
+h2.city-businesses-heading {
+  font-weight: bold;
+  color: #c41200;
+  font-size: 24px;
+  padding: 10px 0;
+}
+
+ul.city-businesses {
+  display: block;
+  padding: 10px 0 0 10px;
+  border: 1px solid #e5e5e1;
+
+  li.city-business {
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e1;
+
+    ul.city-business-elements {
+      float: left;
+
+      li.rating-0 {
+        height: 0;
+        padding-top: 20px;
+        background: red;
+        overflow: hidden;
+        background: image-url('stars_map.png') no-repeat 0 0;
+      }
+
+      li.rating-1 {
+        height: 0;
+        padding-top: 20px;
+        background: red;
+        overflow: hidden;
+        background: image-url('stars_map.png') no-repeat 0px -30px;
+      }
+
+      li.rating-2 {
+        height: 0;
+        padding-top: 20px;
+        background: red;
+        overflow: hidden;
+        background: image-url('stars_map.png') no-repeat 0px -60px;
+      }
+
+
+      li.rating-3 {
+        height: 0;
+        padding-top: 20px;
+        background: red;
+        overflow: hidden;
+        background: image-url('stars_map.png') no-repeat 0px -90px;
+      }
+
+      li.rating-4 {
+        height: 0;
+        padding-top: 20px;
+        background: red;
+        overflow: hidden;
+        background: image-url('stars_map.png') no-repeat 0px -120px;
+      }
+
+      li.rating-5 {
+        height: 0;
+        padding-top: 20px;
+        background: red;
+        overflow: hidden;
+        background: image-url('stars_map.png') no-repeat 0px -163px;
+      }
+
+    }
+
+    p.review{
+      float: right;
+      padding-right: 15px;
+      text-align: center;
+    }
+  }
+
+
+}

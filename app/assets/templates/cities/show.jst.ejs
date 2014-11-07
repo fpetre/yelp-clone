@@ -1,26 +1,51 @@
-<div class="cities">
+<div class="cities group">
   <h1>Yelp <%= city.escape("city_name") %></h1>
 
-  <ul>
+  <ul class="other-cities group">
+    <% YelpClone.Collections.cities.slice(0, 7).forEach(function(city) { %>
+    <li class="city">
+      <%= city.escape("city_name") %>
+    </li>
+    <% })  %>
+  </ul>
 </div>
 
-<h2>Businesses in: <%= city.escape("city_name") %></h2>
-<ul>
-  <% city.businesses().each(function(business) { %>
-    <a href=<%= "#reviews/" + business.id + "/new" %>>Write a Review</a>
-    <li>
-      <a href="#business/<%= business.id %>">
-        <%= business.escape("name") %>
-      </a>
-    </li>
-    <li> Rating: <%= business.escape("average_rating") %> </li>
-    <li> <%= city.escape("country") %> </li>
-    <li> <%= business.escape("address") %> </li>
-    <li> <%= city.escape("city_name") %> </li>
-    <li> <%= city.escape("state") %> </li>
-    <li> <%= business.escape("zip") %> </li>
-    <li> <%= business.escape("phone_number") %> </li>
-    <li> <%= business.escape("website_address") %> </li>
-    <br>
-  <% }) %>
+<div class="create-free-account">
+  <div class="content">
+    <h2> Yelp is the best way to find great local businesses </h2>
+    <p>
+      People use Yelp to search for everything from the city's
+      tastiest burger to the most renowned cardiologist. What will
+      you uncover in your neighborhood?
+    </p>
+    <a href="#user/new"> Create Your Free Account </a>
+  </div>
+</div>
+
+<h2 class="city-businesses-heading">
+  Businesses in: <%= city.escape("city_name") %>
+</h2>
+
+
+<ul class="city-businesses">
+    <% city.businesses().each(function(business) { %>
+      <li class="city-business group">
+        <ul class="city-business-elements">
+          <li>
+            <a href="#business/<%= business.id %>">
+              <%= business.escape("name") %>
+            </a>
+          </li>
+          <li class="<%='rating-' + business.escape("average_rating") %>"> Rating: <%= business.escape("average_rating") %> </li>
+          <li> City: <%= city.escape("city_name") %> </li>
+          <li> State: <%= city.escape("state") %> </li>
+          <li> Address: <%= business.escape("address") %> </li>
+        </ul>
+
+        <p class="review">
+          <%= business.get("reviews")[0] && business.get("reviews")[0].content %>
+        </p>
+      </li>
+    <% }) %>
+
 </ul>

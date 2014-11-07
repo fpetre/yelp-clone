@@ -1,4 +1,9 @@
-<h1><%= user.escape('username') %></h1>
+<h1 class="user-header-name"><%= user.escape('username') %></h1>
+
+<a class="write-review-wrapper" href="#search">
+  <i class="write-review-icon">i</i>
+  <span class="write-review-text">Write a Review</span>
+</a>
 
  <figure>
     <img src="<%= user.get("profile_photo_url") %>" width="300">
@@ -6,7 +11,8 @@
 
 <a href="#currentUser/edit">Edit User Info</a>
 
-<ul id="user-reviews"></ul>
-<a href="#search">Write a Review</a>
+
 
 <a href="#business/new">Add a Business</a>
+
+<ul id="user-reviews"></ul>

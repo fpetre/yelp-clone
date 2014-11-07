@@ -50,5 +50,69 @@ div.business-business-header{
 }
 
 div.business-business-info {
-  padding-top: 10px;
+  padding: 10px 0;
+}
+
+
+ul#business-reviews {
+  display: block;
+  padding: 10px 0 0 10px;
+  border: 1px solid #e5e5e1;
+}
+
+// Business star ratings
+
+.business-rating-0 {
+  width: 130px;
+  height: 0;
+  padding-top: 25px;
+  background: red;
+  overflow: hidden;
+  background: image-url('stars_map.png') no-repeat 0 -513px;
+}
+
+.business-rating-1 {
+  height: 0;
+  width: 130px;
+  padding-top: 25px;
+  background: red;
+  overflow: hidden;
+  background: image-url('stars_map.png') no-repeat 0px -537px;
+}
+
+.business-rating-2 {
+  height: 0;
+  width: 130px;
+  padding-top: 25px;
+  background: red;
+  overflow: hidden;
+  background: image-url('stars_map.png') no-repeat 0px -587px;
+}
+
+
+.business-rating-3 {
+  height: 0;
+  width: 130px;
+  padding-top: 25px;
+  background: red;
+  overflow: hidden;
+  background: image-url('stars_map.png') no-repeat 0px -638px;
+}
+
+.business-rating-4 {
+  height: 0;
+  width: 130px;
+  padding-top: 25px;
+  background: red;
+  overflow: hidden;
+  background: image-url('stars_map.png') no-repeat 0px -687px;
+}
+
+.business-rating-5 {
+  height: 0;
+  width: 130px;
+  padding-top: 25px;
+  background: red;
+  overflow: hidden;
+  background: image-url('stars_map.png') no-repeat 0px -737px;
 }

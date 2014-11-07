@@ -1,15 +1,17 @@
 
-  <li class="review">
-    <br>
-<% if (YelpClone.loggedIn() && YelpClone.currentUser.reviews().get(review.id)) { %>
-      <a href=<%= "#reviews/" + review.id + "/" + review.get("business_id") + "/edit" %>>Edit</a>
-    <% } %>
-    <a href=<%= "#business/" + review.get("business_id") %>>
-      <%= review.escape("businessname") %>
-    </a>
-    <br>
-    Rating:<%= review.escape("rating") %>
-    <br>
-    <%= review.escape("content") %>
-    <br>
+  <li class="reviews-review">
+    <div class="reviews-review-header">
+      <% if (YelpClone.loggedIn() && YelpClone.currentUser.reviews().get(review.id)) { %>
+        <a href=<%= "#reviews/" + review.id + "/" + review.get("business_id") + "/edit" %>>Edit</a>
+      <% } %>
+      <a href=<%= "#business/" + review.get("business_id") %>>
+        <%= review.escape("businessname") %>
+      </a>
+      <div class=<%= "rating-" + review.escape("rating") %>>
+      Rating:<%= review.escape("rating") %>
+    </div>
+
+    <p class="reviews-review-content">
+      <%= review.escape("content") %>
+    </p>
   </li>

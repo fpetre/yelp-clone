@@ -2,7 +2,7 @@
 <div class="business-business-header group">
   <div class="business-business-header-info">
     <h1><%= business.get("name") %></h1>
-    <div class="<%='rating-' + business.escape("average_rating") %>">
+    <div class="<%='business-rating-' + business.escape("average_rating") %>">
       Rating: <%= business.escape("average_rating") %>
     </div>
     <a href=<%= "#business/" + business.id + "/edit"%>> Edit </a>

@@ -1,0 +1,136 @@
+
+
+
+  li.reviews-review {
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e1;
+
+
+    p.reviews-review-content {
+      text-align: center;
+      padding-right: 10px;
+    }
+  }
+
+div.review-form-rating-wrapper{
+
+  position: relative;
+
+
+  .stars{
+
+    width: 300px;
+    border: 1px solid #c41200;
+    background-color: #fdffcd;
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  .stars input{
+    position: absolute;
+    left: -300px;
+  }
+
+  .stars label {
+    float: left;
+    display: block;
+    height: 0;
+    padding-top: 25px;
+    // background: yellow;
+    background: image-url('stars_map.png') no-repeat 12px -513px;
+    overflow: hidden;
+
+  }
+
+  .stars input:checked ~ label {
+    background: grey;
+    width: 30px;
+    background: image-url('stars_map.png') no-repeat 2px -513px;
+
+  }
+
+
+  .stars input:checked + label {
+    background: yellow;
+  }
+
+
+
+  .stars:hover input ~ label,
+  {
+    background: red;
+
+  }
+
+
+
+
+  .stars label > span.rating-text {
+    display: none;
+    font-size: 12px;
+    font-style: italic;
+    position: absolute;
+    right: 0px;
+
+  }
+
+  .stars input:checked + label > span.rating-text {
+    display: inline;
+
+  }
+
+
+  .stars input:checked:nth-child(1) + label {
+      background: green;
+      width: 30px;
+      background: image-url('stars_map.png') no-repeat 2px -537px;
+  }
+
+
+
+  .stars input:checked:nth-child(3) + label {
+      background: green;
+      width: 30px;
+      background: image-url('stars_map.png') no-repeat -25px -587px;
+  }
+
+
+  .stars input:checked:nth-child(5) + label {
+      background: green;
+      width: 30px;
+      background: image-url('stars_map.png') no-repeat -51px -637px;
+  }
+
+
+  .stars input:checked:nth-child(7) + label {
+      background: green;
+      width: 30px;
+      background: image-url('stars_map.png') no-repeat -51px -687px;
+  }
+
+  .stars input:checked:nth-child(9) + label {
+      background: green;
+      width: 30px;
+      background: image-url('stars_map.png') no-repeat -51px -737px;
+  }
+
+
+
+  .stars.stars label:hover ~ label {
+
+    background: grey;
+    width: 30px;
+    background: image-url('stars_map.png') no-repeat 2px -513px;
+  }
+
+  .stars:hover input:nth-child(1) + label {
+      background: green;
+      width: 30px;
+      background: image-url('stars_map.png') no-repeat 2px -537px;
+  }
+
+
+
+
+
+}

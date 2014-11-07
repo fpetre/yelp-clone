@@ -1,3 +1,54 @@
 // Place all the styles related to the api/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul#user-reviews {
+  display: block;
+  padding: 10px 0 0 10px;
+  border: 1px solid #e5e5e1;
+
+}
+
+h1.user-header-name {
+  border: 1px solid #ccccc8;
+  padding: 5px 40px;
+  font-size: 24px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #c41200;
+  background: #f5f5f1;
+}
+
+a.write-review-wrapper {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: block;
+  float: right;
+  margin-right: 300px;
+  background-image: linear-gradient(#ff2000 2%, #ea050b 10%, #d40d04);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  text-shadow: 0 -1px 0 #760400;
+  border: 1px solid #a50508;
+
+  i.write-review-icon {
+    display: block;
+    float: left;
+    width: 30px;
+    height: 0;
+    padding-top: 25px;
+    background: image-url('yelp_sprite_sheet.png') no-repeat 0 -3580px;
+    overflow: hidden;
+
+  }
+
+  span.write-review-text {
+    text-shadow: 0 -1px 0 #760400;
+    padding-top: 5px;
+    display: block;
+    float: left;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}

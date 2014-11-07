@@ -48,8 +48,15 @@ YelpClone.Views.navBar = Backbone.View.extend({
       dataType: "json",
       data: this.query,
       success: function(response){
+
+        if(response.length > 0) {
+          var newId = response[0].city_id;  
+          YelpClone.currentCity = new YelpClone.Models.City({id: newId});
+          YelpClone.currentCity.fetch();
+        }
          view.results = response;
          view.renderSearch();
+
       }
     });
 

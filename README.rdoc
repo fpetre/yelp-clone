@@ -29,13 +29,18 @@ Please feel free to use a different markup language if you do not plan to run
 
 
 Todo
+fix search with address and zipcode
+
+first do paper clip then file picker
+
+
 
 image_path rails helper, pass down with backbone
 background-image: url('/assets/imagename')
 
 categories, models, and join table
 pictures, file picker
-make current city change based on search;
+
 user show page + profile,
 
 

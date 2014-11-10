@@ -1,12 +1,37 @@
 
 <% if(!navBar) { %>
-  <h1>Select From the List Below or Search Again</h1>
+  <% if(firstSearch) { %>
 
-  <div class="yelp-reviews-search">
-    <form class="yelp-reviews-search-form">
-      <input type="text" name="name_query" placeholder="Business Name">
-      <input type="text" name="location_query" placeholder="City, state, address">
-      <input type="submit">
+  <ol class="review-steps group">
+    <li id="review-step-1">
+      <span> Search for business</span>
+    </li>
+    <li id="review-step-2">
+      <span> Select the business</span>
+    </li>
+    <li id="review-step-3">
+      <span> Write your review!</span>
+    </li>
+  </ol>
+
+
+    <h2 class="review-search-start">Which Business Would You Like to Review?</h2>
+  <% } else { %>
+    <h2 class="review-search-continue">Select From the List Below or Search Again</h2>
+  <% } %>
+  <div class="yelp-reviews-search group">
+    <form id="yelp-reviews-search-form">
+      <div class="yelp-reviews-input">
+        <label for="search-name">Find</label>
+        <input id="search-name" type="text" name="name_query" placeholder="Business Name">
+      </div>
+      <div class="yelp-reviews-input">
+        <label for="search-location">Near</label>
+        <input id="search-location" type="text" name="location_query" placeholder="City, state, address">
+      </div>
+      <div class="yelp-review-button-background">
+        <input type="submit">
+      </div>
     </form>
   </div>
 <% } %>
@@ -22,16 +47,24 @@
 
 <ul class="search-results">
   <% results.forEach( function (business) { %>
-    <a href=" <%= "#reviews/" + business.id + "/new" %>">Write a Review</a>
-    <li> <a href="<%= "#business/" + business.id %>"><%= business.name %></a> </li>
-    <li> Rating: <%= business.average_rating %> </li>
-    <li> <%= business.country %> </li>
-    <li> <%= business.address %> </li>
-    <li> <%= business.city_name %> </li>
-    <li> <%= business.state %> </li>
-    <li> <%= business.zip %> </li>
-    <li> <%= business.phone_number %> </li>
-    <li> <%= business.website_address %> </li>
-    <br>
+  <li class="search-result group">
+    <a class="business-name-link" href="<%= "#business/" + business.id %>"><%= business.name %></a>
+    <ul class="search-result-business-info">
+      <li class="<%= "business-rating-" + business.average_rating %>"> Rating: <%= business.average_rating %> </li>
+      <li class="business-address">
+        <span> <%= business.address %> </span>
+        <span> <%= business.city %> </span>
+        <span> <%= business.state %> </span>
+        <span> <%= business.zip %> </span>
+      </li>
+      <li>
+         <%= business.phone_number ? "phone:" + business.phone_number : "" %>
+      </li>
+      <li>
+        <%= business.website_address  ? "web:" + business.website_address : "" %>
+      </li>
+    </ul>
+    <a class="new-review-link" href=" <%= "#reviews/" + business.id + "/new" %>">Write a Review</a>
+  </li>
   <% }) %>
 </ul>

@@ -8,6 +8,7 @@ YelpClone.Views.Search = Backbone.View.extend({
   },
 
   initialize: function() {
+    this.firstSearch = true;
     this.results = [];
     this.query = {name_query: "", location_query: ""};
   },
@@ -32,8 +33,9 @@ YelpClone.Views.Search = Backbone.View.extend({
     if (event) {
       event.preventDefault();
       this.page = 1;
-      this.query = $("form.yelp-reviews-search-form").serializeJSON();
+      this.query = $("form#yelp-reviews-search-form").serializeJSON();
       this.query["page"] = this.page;
+      this.firstSearch = false;
     }
 
     this.query["page"] = this.page;
@@ -55,7 +57,7 @@ YelpClone.Views.Search = Backbone.View.extend({
   },
 
   render: function () {
-    this.$el.html(this.template({results: this.results, totalPages: this._totalPages(), navBar: false}));
+    this.$el.html(this.template({results: this.results, totalPages: this._totalPages(), navBar: false, firstSearch: this.firstSearch}));
     return this;
   }
 });

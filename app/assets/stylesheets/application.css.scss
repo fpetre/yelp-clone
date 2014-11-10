@@ -16,7 +16,7 @@
 
 // reset
 
-h1, h2, header, nav, main, ul, li, div, form, img, button, html, body {
+h1, h2, header, nav, main, ul, li,ol, div, form, img, button, html, body {
   margin: 0px;
   padding: 0px;
   border: 0px;
@@ -34,6 +34,10 @@ h1, h2, header, nav, main, ul, li, div, form, img, button, html, body {
 }
 
 ul {
+  list-style: none;
+}
+
+ol {
   list-style: none;
 }
 

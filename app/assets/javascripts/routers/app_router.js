@@ -10,6 +10,7 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
     "search" : "search",
     "session/new" : "sessionNew",
     "business/new" : "businessNew",
+    "guestLogin" : "guestLogin",
     "user/new": "userNew",
     "reviews/:businessId/new" : "reviewsNew",
     "currentUser/edit" : "currentUserEdit",
@@ -27,9 +28,7 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
   },
 
   currentCityChange: function (id) {
-    var newCity = new YelpClone.Models.City({id: id});
-    YelpClone.currentCity = newCity;
-    YelpClone.currentCity.fetch();
+    YelpClone.currentCity = YelpClone.Collections.cities.getOrFetch(id);
     Backbone.history.navigate("", {trigger: true});
   },
 
@@ -58,8 +57,6 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
   },
 
   reviewsNew: function (businessId) {
-    // check if review already exists, redirect and display error if it does
-
     if(!YelpClone.loggedIn()) {
       YelpClone.navigateInfo = {url: "reviews/" + businessId + "/new"};
       return Backbone.history.navigate("session/new", {trigger: true});
@@ -96,10 +93,16 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
     this._swapView(userNewView);
   },
 
+  guestLogin: function () {
+    YelpClone.currentUser = YelpClone.Collections.users.findWhere({username: "Winnie"});
+    Backbone.history.navigate("users/" + YelpClone.currentUser.id, {trigger:true});
+  },
+
+
   currentUserEdit: function () {
     if(!YelpClone.loggedIn()) {
       YelpClone.navigateInfo = {url: "currentUser/edit"};
-      return Backbonehistory.navigate("session/new", {trigger: true});
+      return Backbone.history.navigate("session/new", {trigger: true});
     }
     this._resetNavigateInfo();
     var user = YelpClone.currentUser;
@@ -108,7 +111,6 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
   },
 
   userShow: function (id) {
-    //change later to have multiple users
     var user = YelpClone.currentUser;
     user.fetch();
     var userShowView = new YelpClone.Views.UserShow({model: user});

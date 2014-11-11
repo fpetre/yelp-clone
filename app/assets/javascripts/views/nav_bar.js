@@ -50,7 +50,7 @@ YelpClone.Views.navBar = Backbone.View.extend({
       success: function(response){
 
         if(response.length > 0) {
-          var newId = response[0].city_id;  
+          var newId = response[0].city_id;
           YelpClone.currentCity = new YelpClone.Models.City({id: newId});
           YelpClone.currentCity.fetch();
         }

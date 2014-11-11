@@ -65,3 +65,30 @@ h1.user-form-header {
   color: #c41200;
   font-weight: bold;
 }
+
+div.user-form-inputs {
+  padding: 10px 0;
+
+  div.user-password-input, div.user-name-input {
+    float: left;
+    margin-right: 10px;
+    padding: 5px;
+    background: rgba(250,250,249,0.9);
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
+    font-size: 14px;
+
+  }
+}
+
+button.user-form-submit-button {
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 7px 16px;
+  background-image: linear-gradient(#ff2000 2%, #ea050b 10%, #d40d04);
+  border: 1px solid #a50508;
+  color: white;
+  font-weight: bold;
+
+}

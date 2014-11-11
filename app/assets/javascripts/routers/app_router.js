@@ -94,10 +94,18 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
   },
 
   guestLogin: function () {
-    YelpClone.currentUser = YelpClone.Collections.users.findWhere({username: "Winnie"});
-    Backbone.history.navigate("users/" + YelpClone.currentUser.id, {trigger:true});
-  },
+    var signInParams = {session: {username: "Winnie", password: "password"}};
+    $.ajax({
+      type: "POST",
+      url: "/api/session",
+      data: signInParams,
+      success: function(response){
+          YelpClone.currentUser.set(response);
+          Backbone.history.navigate("users/" + YelpClone.currentUser.id, {trigger:true});
+      }.bind(this)
+    });
 
+  },
 
   currentUserEdit: function () {
     if(!YelpClone.loggedIn()) {
@@ -111,8 +119,7 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
   },
 
   userShow: function (id) {
-    var user = YelpClone.currentUser;
-    user.fetch();
+    var user = YelpClone.Collections.users.getOrFetch(id);
     var userShowView = new YelpClone.Views.UserShow({model: user});
     this._swapView(userShowView);
   },

@@ -5,6 +5,7 @@ YelpClone.Views.navBar = Backbone.View.extend({
   className: "header-nav group",
 
   initialize: function() {
+    this.listenTo(YelpClone.Collections.users, "change sync", this.render);
     this.listenTo(YelpClone.currentUser, "change", this.render);
     this.listenTo(YelpClone.currentCity, "change", this.render);
     this.results = [];

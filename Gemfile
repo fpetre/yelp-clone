@@ -36,6 +36,8 @@ gem 'spring',        group: :development
 
 # Use debugger
 
+gem 'geocoder'
+
 gem 'figaro'
 
 gem "paperclip"

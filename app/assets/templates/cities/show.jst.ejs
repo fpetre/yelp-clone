@@ -4,7 +4,9 @@
   <ul class="other-cities group">
     <% YelpClone.Collections.cities.slice(0, 7).forEach(function(city) { %>
     <li class="city">
-      <%= city.escape("city_name") %>
+      <a href="<%= "#city/" + city.id + "/show" %>">
+        <%= city.escape("city_name") %>
+      </a>
     </li>
     <% })  %>
   </ul>

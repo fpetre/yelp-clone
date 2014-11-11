@@ -1,3 +1,4 @@
 Geocoder.configure(
-:timeout => 5
+  :timeout => 5,
+  cache: Rails.cache
 )

@@ -7,6 +7,6 @@
  $(document).ready(function(){
   var $rootEl = $("#backbone_main_content");
   var $navEl = $(".yelp-header");
-  YelpClone.initialize(<%= logged_in? %>, <%= current_user.try(:id) || "undefined" %>, <%= current_city.try(:id) %>, $rootEl, $navEl);
+  YelpClone.initialize(<%= logged_in? %>, <%= current_user.try(:id) || "undefined" %>, <%= current_city.try(:id) %>, "<%= image_url("user_medium_square.png") %>", $rootEl, $navEl);
  });
  </script>

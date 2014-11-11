@@ -26,7 +26,8 @@ window.YelpClone = {
     };
   },
 
-  initialize: function (logedIn, currentUserId, currentCityId, $rootEl, $navEl) {
+  initialize: function (logedIn, currentUserId, currentCityId, defaultProfilePhotoUrl, $rootEl, $navEl) {
+    YelpClone.defaultProfilePhotoUrl = defaultProfilePhotoUrl;
     this._CreateModels(logedIn, currentUserId, currentCityId);
     var navBarView = new YelpClone.Views.navBar();
     $navEl.html(navBarView.render().$el);

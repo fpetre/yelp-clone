@@ -7,6 +7,10 @@ YelpClone.Views.UserForm = Backbone.View.extend({
     'change .my-photo-upload': 'handleFile'
   },
 
+  initialize: function() {
+    this.listenTo(this.model, "change add sync remove", this.render);
+  },
+
 
   handleFile: function (event) {
     var file = event.currentTarget.files[0];

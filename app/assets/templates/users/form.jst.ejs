@@ -1,16 +1,28 @@
-<h1><%= YelpClone.loggedIn() ? "Edit User Info" : "Sign Up" %> </h1>
+<h1 class="user-form-header"><%= YelpClone.loggedIn() ? "Edit User Info" : "Sign Up" %> </h1>
 
 <form>
-  <label for="profile-photo">Profile Photo</label>
-  <input type="file" name="user[profile_photo]" class="my-photo-upload">
 
+  <figure>
+     <% if (user.has("profile_photo_url")) { %>
+       <img src="<%= user.get("profile_photo_url") %>" width="150">
+     <% } else { %>
+       <img src="<%= YelpClone.defaultProfilePhotoUrl %>" width="150">
+       <% } %>
+   </figure>
 
+  <div class="profile-photo-input">
+    <label for="profile-photo">Profile Photo</label>
+    <input type="file" name="user[profile_photo]" class="my-photo-upload">
+  </div>
 
-  <label for="user-name">User Name</label>
-  <input id="user-name" name="user[username]" value="<%= user.escape("username") %>">
+  <div class="user-name-input">
+    <label for="user-name">User Name</label>
+    <input id="user-name" name="user[username]" value="<%= user.escape("username") %>">
+  </div>
 
-  <label for="user-password">Password</label>
-  <input type="password" for="user-password" name="user[password]">
-
+  <div class="user-password-input">
+    <label for="user-password">Password</label>
+    <input type="password" for="user-password" name="user[password]" value="<%= user.escape("password") %>"  >
+  </div>
   <input type="submit" value="<%= YelpClone.loggedIn() ? "Edit" : "Sign Up" %>">
 </form>

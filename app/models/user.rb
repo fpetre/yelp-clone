@@ -25,8 +25,6 @@ class User < ActiveRecord::Base
     :content_type => /\Aimage\/.*\Z/
   )
 
-
-
   def password=(password)
     @password = password
     self.password_digest = Password.create(password)

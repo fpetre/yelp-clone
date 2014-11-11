@@ -1,34 +1,62 @@
 
 
 
-  li.reviews-review {
-    padding: 10px 0;
-    border-bottom: 1px solid #e5e5e1;
+li.reviews-review {
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e5e1;
 
 
-    p.reviews-review-content {
-      text-align: center;
-      padding-right: 10px;
-    }
+  p.reviews-review-content {
+    text-align: center;
+    padding-right: 10px;
   }
+}
 
- a{
-   display:block;
-   height: 20px;
- }
+
+
+// review form
 
 div.review-business-info {
   position: relative;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+
+  a.review-business-info-name{
+    color: #3b65a7;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    height: 20px;
+  }
+
+  address.review-form-business-address {
+    float: right;
+    span{
+      display: block;
+    }
+  }
+
+  div.review-business-info-left {
+    float: left;
+  }
+
 }
 
 
 div.review-form-rating-wrapper{
-
+  padding-top: 10px;
   position: relative;
 
 
-  .stars{
+  label.stars-rating-label{
+    float: left;
+    width: 150px;
+    padding-right: 10px;
+  }
 
+
+  .stars{
+    float: left;
     width: 300px;
     border: 1px solid #c41200;
     background-color: #fdffcd;
@@ -38,7 +66,8 @@ div.review-form-rating-wrapper{
 
   .stars input{
     position: absolute;
-    left: -300px;
+    left: -9999px;
+    overflow: hidden;
   }
 
   .stars label {
@@ -87,43 +116,6 @@ div.review-form-rating-wrapper{
   }
 
 
-  // .stars input:checked:nth-child(1) + label {
-  //     background: green;
-  //     width: 30px;
-  //     background: image-url('stars_map.png') no-repeat 2px -537px;
-  // }
-  //
-  //
-  //
-  // .stars input:checked:nth-child(3) + label {
-  //     background: green;
-  //     width: 30px;
-  //     overflow-x: visible;
-  //     background: image-url('stars_map.png') no-repeat -25px -587px;
-  // }
-  //
-  //
-  // .stars input:checked:nth-child(5) + label {
-  //     background: green;
-  //     width: 30px;
-  //     background: image-url('stars_map.png') no-repeat -51px -637px;
-  // }
-  //
-  //
-  // .stars input:checked:nth-child(7) + label {
-  //     background: green;
-  //     width: 30px;
-  //     background: image-url('stars_map.png') no-repeat -51px -687px;
-  // }
-  //
-  // .stars input:checked:nth-child(9) + label {
-  //     background: green;
-  //     width: 30px;
-  //     background: image-url('stars_map.png') no-repeat -100px -738px;
-  // }
-  //
-
-
   .stars.stars label:hover ~ label {
 
     background: grey;
@@ -131,11 +123,36 @@ div.review-form-rating-wrapper{
     background: image-url('stars_map.png') no-repeat 2px -513px;
   }
 
-  // .stars input:hover:nth-child(1) + label {
-  //     background: green;
-  //     width: 30px;
-  //     background: image-url('stars_map.png') no-repeat 2px -537px;
-  // }
+}
+
+div.review-content-input {
+  padding-top: 10px;
+  label.review-content-label {
+    float: left;
+    width: 150px;
+    padding-right: 10px;
+
+  }
+
+  textarea.review-content-textarea{
+    float: left;
+    width: 469px;
+    height: 115px;
+
+  }
+
+}
 
 
+button.review-form-submit {
+  margin-left: 580px;
+  background-image: linear-gradient(#ff2000 2%, #ea050b 10%, #d40d04);
+  border-radius: 4px;
+  padding: 7px 16px;
+  border: 1px solid #a50508;
+  padding: 10px;
+  display: block;
+  margin-top: 20px;
+  color: white;
+  font-weight: inherit;
 }

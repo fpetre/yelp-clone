@@ -1,23 +1,24 @@
-<div class="review-business-info">
-
+<div class="review-business-info group">
+  <div class="review-business-info-left">
   <% if (review.isNew()) { %>
     <h1>Complete your review:</h1>
   <% } else { %>
     <h1>Edit Your Review:</h1>
   <% } %>
   <h2>
-    <a href="<%= "#business/" + business.id %>">
+    <a class="review-business-info-name" href="<%= "#business/" + business.id %>">
       <%= business.escape("name") %>
     </a>
-
   </h2>
+</div>
 
 
   <address class="review-form-business-address">
   <span class="business-street-address">
-
+    <%= business.escape("address") %>
   </span>
   <span class="business-city-state">
+    <%= business.escape("city") + ", " + business.escape("state") %>
   </span>
   </address>
 
@@ -32,8 +33,9 @@
 
 
 
-  <label>Rate</label>
+
   <div class="review-form-rating-wrapper group">
+    <label class="stars-rating-label">Rating</label>
       <div class="stars group">
         <input type="radio" id="rating-1" name="review[rating]" value="1"
         <% if (1 == review.escape("rating")) { %> checked <% } %>>
@@ -88,11 +90,13 @@
 
 
 
-
-	<label for="review-content">Your Review</label>
-	<textarea type="review-content" name="review[content]"
-  value="<%= review.content %>"><%= review.escape("content") %>
-	</textarea>
-
-	<input type="submit" value="<%= review.isNew ? "Post": "Edit"  %>">
+  <div class="review-content-input group">
+  	<label class="review-content-label" for="review-content">Your Review</label>
+  	<textarea class="review-content-textarea" type="review-content" name="review[content]"
+    value="<%= review.content %>"><%= review.escape("content") %>
+  	</textarea>
+  </div>
+  <button class="review-form-submit">
+    <input type="submit" value="<%= review.isNew() ? "Post": "Edit"  %>">
+  </button>
 </form>

@@ -1,3 +1,3 @@
 Geocoder.configure(
-:timeout => 15
+:timeout => 5
 )

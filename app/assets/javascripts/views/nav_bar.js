@@ -6,7 +6,7 @@ YelpClone.Views.navBar = Backbone.View.extend({
 
   initialize: function() {
     this.listenTo(YelpClone.Collections.users, "change sync", this.render);
-    this.listenTo(YelpClone.currentUser, "change", this.render);
+    this.listenTo(YelpClone.currentUser, "change sync", this.render);
     this.listenTo(YelpClone.currentCity, "change", this.render);
     this.results = [];
     this.query = {name_query: "", location_query: ""};

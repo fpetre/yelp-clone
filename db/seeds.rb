@@ -38,5 +38,11 @@ City.create!([
   {city_name: "Bronx", country: "United States", state: "New York"}
 ])
 User.create!([
-  {username: "Winnie", password_digest: "$2a$10$yj66HjVMYc1ysIdfoy.8eeMHrTJCGRfsm4FQ4GN/AXjoEWFEoAwr.", session_token: "p5a5PLFdG5HT7OAp0OByXA", profile_photo_file_name: "data", profile_photo_content_type: "image/jpeg", profile_photo_file_size: 199307, profile_photo_updated_at: "2014-11-17 14:47:03"}
+  {username: "Piglet", password_digest: "$2a$10$xqbA1bMgLgCo5BUj0AjIZuKCHkXItHYUzeMcPTmd3QX0OSqx9oOYy", session_token: "plqzRiHa-j0VR7urrDWiTg", profile_photo_file_name: "data", profile_photo_content_type: "image/jpeg", profile_photo_file_size: 7721, profile_photo_updated_at: "2014-11-17 22:12:03"},
+  {username: "Tigger", password_digest: "$2a$10$zPyNMKDfZSnmYyS..COXq.Y7Y/7mnF6.MseLd7PtcwWEjkpFvD0xS", session_token: "Ph1MhUTlWkrSS06Y-A45Fw", profile_photo_file_name: "data", profile_photo_content_type: "image/jpeg", profile_photo_file_size: 192246, profile_photo_updated_at: "2014-11-17 22:13:01"},
+  {username: "Eeyore", password_digest: "$2a$10$cedcrjNxxWDcDC.fjcwUJOcStFnyOgODQPicFHEHpzb.XN0eJMcua", session_token: "3UJbD7L6sIBYlyblqntdHQ", profile_photo_file_name: "data", profile_photo_content_type: "image/jpeg", profile_photo_file_size: 8762, profile_photo_updated_at: "2014-11-17 22:26:27"},
+  {username: "Owl", password_digest: "$2a$10$1YvkXLqgWusYPys9GVxsTeBLhcUVPXamldfJIfvxtUwsy3ccG725O", session_token: "azc1NnGhAtI1YjtMgueQFw", profile_photo_file_name: "data", profile_photo_content_type: "image/jpeg", profile_photo_file_size: 28574, profile_photo_updated_at: "2014-11-17 22:36:20"},
+  {username: "Rabbit", password_digest: "$2a$10$okSGn.ka2s8fbN79jP833uRSyEoRrkL3Oi1/SpF8HHejdJoK2nMXK", session_token: "OAqF2gcoi72z4BnvVcJWMQ", profile_photo_file_name: "data", profile_photo_content_type: "image/jpeg", profile_photo_file_size: 255593, profile_photo_updated_at: "2014-11-17 22:38:37"},
+  {username: "Paddington", password_digest: "$2a$10$3mEKNK32t1BTPVA4qic1q.SbCM15qdfy74.DY7v5pJHLKaMdoRCx6", session_token: "mFrWOQsyZU-cWBUU7gGKQQ", profile_photo_file_name: "data", profile_photo_content_type: "image/jpeg", profile_photo_file_size: 30989, profile_photo_updated_at: "2014-11-17 22:47:01"},
+  {username: "Winnie", password_digest: "$2a$10$yj66HjVMYc1ysIdfoy.8eeMHrTJCGRfsm4FQ4GN/AXjoEWFEoAwr.", session_token: "92fHmNCrir0Ec4025-aQ5A", profile_photo_file_name: "data", profile_photo_content_type: "image/jpeg", profile_photo_file_size: 199307, profile_photo_updated_at: "2014-11-17 14:47:03"}
 ])

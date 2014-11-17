@@ -17,10 +17,7 @@ YelpClone.Views.UserForm = Backbone.View.extend({
     var view = this;
     var reader = new FileReader();
     reader.onload = function(e) {
-      // note that this isn't saving
-      // var attrs = {user: {my_photo: this.result}}
       view.model.set('profile_photo', this.result);
-
     }
     reader.readAsDataURL(file);
   },
@@ -36,7 +33,7 @@ YelpClone.Views.UserForm = Backbone.View.extend({
         YelpClone.Utils.renderErrors.bind(view)({user: model}, response);
       },
       success: function(user){
-        YelpClone.currentUser.set(user);
+        YelpClone.currentUser = user;
         delete view.model.attributes.profile_photo;
         Backbone.history.navigate("users/"+ YelpClone.currentUser.id, {trigger: true})
       }});

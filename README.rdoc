@@ -1,63 +1,8 @@
-== README
+This is a clone of Yelp using Rails and Backbone.js.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ -  all of the pages including log in are implemented in Bacbne.
 
-Things you may want to cover:
+ -  Makes use of the geocoder gem to set the main page to the visitors city
+    if there are any reviews in it otherwise it defaults to Brooklyn.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
-
-Todo
-fix search with address and zipcode
-
-first do paper clip then file picker
-
-
-
-image_path rails helper, pass down with backbone
-background-image: url('/assets/imagename')
-
-categories, models, and join table
-pictures, file picker
-
-user show page + profile,
-
-
-
-make jbuilder for api session controller create action
-
-
-do css
-facebook login
-add backbone validations
-add many users
-
-
-add delete to reviews
-add address api, or use tomis zip code list
-unique cities
-implement hours
-add model specs
-
-create user profile model
+ -  Uses paperclip gem to allow users to upload profile photos.

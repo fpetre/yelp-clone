@@ -105,6 +105,26 @@ h2.review-search-continue {
 }
 
 
+// pagination
+
+button.prev-button, button.next-button {
+  background: red;
+  color: white;
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+a.search-page.active {
+  font-weight: bold;
+  color: red;
+}
+
+
+// search results
+
 ul.search-results {
   padding: 10px;
 

@@ -37,11 +37,14 @@
 <% } %>
 
 <% if (results.length > 0 ) { %>
-  <button id="prev">prev</button>
-    <%  for (var i = 0; i < totalPages; i++) {  %>
-      <a class="search-page"> <%= i > 0 ? i : ""  %> </a>
+  <button class="prev-button">prev</button>
+    <% console.log(currentPage) %>
+    <%  for (var i = 0; i <= totalPages; i++) {  %>
+      <a class="<%= currentPage === i ? 'search-page active' : 'search-page' %>">
+        <%= i > 0 ? i : ""  %>
+      </a>
     <% }  %>
-  <button id="next">next</button>
+  <button class="next-button">next</button>
   <% }  %>
 
 

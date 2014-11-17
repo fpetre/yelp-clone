@@ -3,8 +3,8 @@ YelpClone.Views.Search = Backbone.View.extend({
 
   events: {
     "submit form" : "search",
-    "click button#next" : "next",
-    "click button#prev" : "prev"
+    "click button.next-button" : "next",
+    "click button.prev-button" : "prev",
   },
 
   initialize: function() {
@@ -14,22 +14,21 @@ YelpClone.Views.Search = Backbone.View.extend({
   },
 
   next: function() {
-    if (this.page  < this.totalPages) {
-      this.page++;
+    if (this.page  < this._totalPages()) {
+      this.page = this.page + 1;
     }
     this.search();
   },
 
   prev: function() {
     if (this.page > 1 ) {
-      this.page--;
+      this.page = this.page - 1;
     }
     this.search();
   },
 
   search: function (event) {
     var view = this;
-
     if (event) {
       event.preventDefault();
       this.page = 1;
@@ -57,7 +56,7 @@ YelpClone.Views.Search = Backbone.View.extend({
   },
 
   render: function () {
-    this.$el.html(this.template({results: this.results, totalPages: this._totalPages(), navBar: false, firstSearch: this.firstSearch}));
+    this.$el.html(this.template({results: this.results, totalPages: this._totalPages(), navBar: false, firstSearch: this.firstSearch, currentPage: this.page}));
     return this;
   }
 });

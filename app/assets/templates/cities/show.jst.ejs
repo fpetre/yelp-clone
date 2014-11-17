@@ -52,7 +52,7 @@
         </ul>
 
         <p class="review">
-          <%= business.get("reviews")[0] && business.get("reviews")[0].content %>
+          <%= business.reviews().first() && business.reviews().first().content %>
         </p>
       </li>
     <% }) %>

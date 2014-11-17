@@ -14,6 +14,9 @@ YelpClone.Views.BusinessForm = Backbone.View.extend({
       },
       success: function(business){
         YelpClone.Collections.businesses.add(business);
+        if (business.city === YelpClone.currentCity.city_name) {
+          YelpClone.currentCity.businesses().add(business);
+        }
         Backbone.history.navigate("business/" + business.id, {trigger: true});
       }
     });

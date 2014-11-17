@@ -1,6 +1,6 @@
 This is a clone of Yelp using Rails and Backbone.js.
 
- -  all of the pages including log in are implemented in Bacbne.
+ -  all of the pages including log in are implemented in Backbone.
 
  -  Makes use of the geocoder gem to set the main page to the visitors city
     if there are any reviews in it otherwise it defaults to Brooklyn.

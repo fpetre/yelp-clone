@@ -1,4 +1,7 @@
 
+// business show page
+
+
 div.business-business-header{
   padding-top: 20px;
 
@@ -115,4 +118,61 @@ ul#business-reviews {
   background: red;
   overflow: hidden;
   background: image-url('stars_map.png') no-repeat 0px -737px;
+}
+
+
+
+
+// business form
+h1.business-form-header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #c41200;
+  padding-bottom: 15px;
+}
+
+form{
+  div.business-form-input {
+    padding: 5px 0;
+
+    label {
+      padding-bottom: 3px;
+      display: block;
+      font-weight: bold;
+    }
+
+    select {
+      display: block;
+      width: 312px;
+      padding: 4px 2px;
+      height: 30px;
+      border: 1px solid #bbb;
+      border-radius: 2px;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
+
+    }
+
+    input{
+      display: block;
+      width: 300px;
+      padding: 5px;
+      background: rgba(250,250,249,0.9);
+      border: 1px solid #bbb;
+      border-radius: 2px;
+      font-size: 12px;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
+    }
+
+  }
+
+  input[type='submit'] {
+    border: 1px solid #a50508;
+    background: #ea050b;
+    background-image: linear-gradient(#ff2000 2%, #ea050b 10%, #d40d04);
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
 }

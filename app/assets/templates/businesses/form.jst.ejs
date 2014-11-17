@@ -1,41 +1,66 @@
-<h1><%= business.isNew() ? "Add a Business": "Update Business Details" %></h1>
+<h1 class="business-form-header">
+  <%= business.isNew() ? "Add a Business": "Update Business Details" %>
+</h1>
 
 
 <form>
+  <div class="business-form-input">
+    <label for="cities-country">Country</label>
+    <select id="cities-country" name="city[country]">
+      <option selected value="United States">United States</option>
+    </select> <br>
+  </div>
 
-  <label for="cities-country">Country</label>
-  <select id="cities-country" name="city[country]">
-    <option selected value="United States">United States</option>
-  </select> <br>
+  <div class="business-form-input">
+    <label for="business-name">Business Name</label>
+    <input id="business-name" name="business[name]"
+    placeholder="Mel's Diner"
+    value="<%= business.escape("name") %>"> <br>
+  </div>
 
-  <label for="business-name">Business Name</label>
-  <input id="business-name" name="business[name]"
-  value="<%= business.escape("name") %>"> <br>
+  <div class="business-form-input">
+    <label for="business-address">Address</label>
+    <input id="business-address" name="business[address]"
+    placeholder="123 Main Street"
+    value="<%= business.escape("address") %>"> <br>
+  </div>
 
-  <label for="business-address">Address</label>
-  <input id="business-address" name="business[address]"
-  value="<%= business.escape("address") %>"> <br>
+  <div class="business-form-input">
+    <label for="cities-name">City</label>
+    <input id="cities-name" name="city[city_name]"
+    placeholder="Brooklyn"
+    value="<%= business.escape("city") %>"> <br>
+  </div>
 
-  <label for="cities-name">City</label>
-  <input id="cities-name" name="city[city_name]"
-  value="<%= business.escape("city") %>"> <br>
+  <div class="business-form-input">
+    <label for="cities-state">State</label>
+    <input id="cities-state" name="city[state]"
+    placeholder="New York"
+    value="<%= business.escape("state") %>"> <br>
+  </div>
 
-  <label for="cities-state">State</label>
-  <input id="cities-state" name="city[state]"
-  value="<%= business.escape("state") %>"> <br>
+  <div class="business-form-input">
+    <label for="business-zip">zip</label>
+    <input id="business-zip" name="business[zip]"
+    placeholder="11222"
+    value="<%= business.escape("zip") %>"> <br>
+  </div>
 
 
-  <label for="business-zip">zip</label>
-  <input id="business-zip" name="business[zip]"
-  value="<%= business.escape("zip") %>"> <br>
+  <div class="business-form-input">
+    <label for="business-phone-number">Phone Number</label>
+    <input id="business-phone-number" name="business[phone_number]"
+    placeholder="(555) 555-5555"
+    value="<%= business.escape("phone_number") %>"> <br>
+  </div>
 
-  <label for="business-phone-number">Phone Number</label>
-  <input id="business-phone-number" name="business[phone_number]"
-  value="<%= business.escape("phone_number") %>"> <br>
 
-  <label for="business-website-address">Website Address</label>
-  <input id="business-website-address" name="business[website_address]"
-  value="<%= business.escape("website_address") %>"> <br>
+  <div class="business-form-input">
+    <label for="business-website-address">Website Address</label>
+    <input id="business-website-address" name="business[website_address]"
+    placeholder="http://www.companyaddress.com"
+    value="<%= business.escape("website_address") %>"> <br>
+  </div>
 
-  <input type="submit" value="<%= business.isNew() ? "Add Business" :  "Submit Changes"%>">
+  <input type="submit" value="<%= business.isNew() ? "Add A Business" :  "Submit Changes"%>">
 </form>

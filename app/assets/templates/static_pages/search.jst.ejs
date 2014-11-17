@@ -67,4 +67,12 @@
     <a class="new-review-link" href=" <%= "#reviews/" + business.id + "/new" %>">Write a Review</a>
   </li>
   <% }) %>
+
+  <% if ( results.length > 0 ) {%>
+  <li class="add-business-blurb">
+    <h3> Not here? Tell us what we're missing. </h3>
+    <p> If the business you're looking for isn't here, add it! </p>
+    <a href="#business/new"> Add A Business </a>
+  </li>
+  <% } %>
 </ul>

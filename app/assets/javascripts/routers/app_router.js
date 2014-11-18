@@ -8,6 +8,7 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
     "" : "currentCityShow",
     "city/:id/show" : "currentCityChange",
     "search" : "search",
+    "navBarSearch/:query" : "navBarSearch",
     "session/new" : "sessionNew",
     "business/new" : "businessNew",
     "guestLogin" : "guestLogin",
@@ -18,13 +19,21 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
     "reviews/:id/:businessId/edit" : "reviewsEdit",
     "business/:id": "businessShow",
     "users/:id": "userShow"
-
   },
 
 
   search: function () {
     var searchView = new YelpClone.Views.Search();
     this._swapView(searchView);
+  },
+
+  navBarSearch: function (query) {
+    Backbone.history.navigate('#navBarSearch');
+    var navSearchView = new YelpClone.Views.navSearch({query: JSON.parse(query) });
+    this._currentView && this._currentView.remove();
+    this._currentView = navSearchView;
+    this.$rootEl.html(this._currentView.search().$el)
+
   },
 
   currentCityChange: function (id) {

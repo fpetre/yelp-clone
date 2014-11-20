@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     end
 
     def current_city
-      if request.location.city
+      if request.location
         city_name = request.location.city
         if city = City.includes(:businesses => :reviews).find_by_city_name(city_name)
           @current_city = city

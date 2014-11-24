@@ -11,7 +11,7 @@
       Rating:<%= review.escape("rating") %>
     </div>
     <div class="review-author">
-      <%= YelpClone.Collections.users.getOrFetch(review.escape('user_id')).escape('username') %>
+      <%= review.escape('authorname') %>
     </div>
 
     <p class="reviews-review-content">

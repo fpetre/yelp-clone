@@ -137,6 +137,19 @@ ul.search-results {
       width: 200px;
       font-size: 14px;
       padding: 0 10px;
+
+      div.search-result-business-rating{
+      float: left;
+      }
+
+      span.search-result-business-totalreviews {
+        padding-left: 5px;
+        float: left;
+        display: block;
+        color: #555;
+        line-height: 2;
+      }
+
     }
 
     a.business-name-link {

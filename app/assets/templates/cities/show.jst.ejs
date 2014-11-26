@@ -43,8 +43,15 @@
               <%= business.escape("name") %>
             </a>
           </li>
-          <li class="<%='rating-' + business.escape("average_rating") %>">
-            Rating: <%= business.escape("average_rating") %>
+          <li class="business-rating-wrapper group">
+            <div class="city-businesses-rating">
+              <div class="<%='rating-' + business.escape("average_rating") %>">
+                Rating: <%= business.escape("average_rating") %>
+              </div>
+            </div>
+            <span class=city-business-totalreviews>
+              <%= business.reviews().length %> reviews
+            </span>
           </li>
           <li> City: <%= city.escape("city_name") %> </li>
           <li> State: <%= city.escape("state") %> </li>

@@ -4,4 +4,5 @@ json.array! @search do |business|
   json.city business.city.city_name
   json.state business.city.state
   json.country business.city.country
+  json.totalReviews business.reviews.length
 end

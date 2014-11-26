@@ -87,6 +87,11 @@ ul.city-businesses {
     ul.city-business-elements {
       float: left;
 
+      span.city-business-totalreviews {
+        color: #555;
+        font-size: 12px;
+      }
+
     }
 
     p.review{
@@ -96,5 +101,8 @@ ul.city-businesses {
     }
   }
 
+}
 
+div.city-businesses-rating {
+  float: left;
 }

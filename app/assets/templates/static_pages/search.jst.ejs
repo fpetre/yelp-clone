@@ -50,9 +50,21 @@
 <ul class="search-results">
   <% results.forEach( function (business) { %>
   <li class="search-result group">
-    <a class="business-name-link" href="<%= "#business/" + business.id %>"><%= business.name %></a>
+    <a class="business-name-link" href="<%= "#business/" + business.id %>">
+      <%= business.name %>
+    </a>
     <ul class="search-result-business-info">
-      <li class="<%= "business-rating-" + business.average_rating %>"> Rating: <%= business.average_rating %> </li>
+      <li class="search-result-ratingwrapper group">
+        <div class="search-result-business-rating">
+          <div class="<%= "business-rating-" + business.average_rating %>">
+            Rating: <%= business.average_rating %>
+          </div>
+        </div>
+        <span class="search-result-business-totalreviews">
+          <%= business.totalReviews %> reviews
+        </span>
+      </li>
+      </span>
       <li class="business-address">
         <span> <%= business.address %> </span>
         <span> <%= business.city %> </span>

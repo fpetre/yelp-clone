@@ -1,14 +1,21 @@
 
-<div class="business-business-header group">
-  <div class="business-business-header-info">
+<div class="business-businessheader group">
+  <div class="business-businessheader-info group">
     <h1><%= business.get("name") %></h1>
-    <div class="<%='business-rating-' + business.escape("average_rating") %>">
-      Rating: <%= business.escape("average_rating") %>
+    <div class="business-rating-wrapper group">
+      <div class="business-businessheader-rating">
+        <div class="business-rating-<%= business.escape("average_rating") %>">
+          Rating: <%= business.escape("average_rating") %>
+        </div>
+      </div>
+      <span class="business-businessheader-totalreviews">
+        <%= business.reviews().length %> reviews
+      </span>
     </div>
     <a href=<%= "#business/" + business.id + "/edit"%>> Edit </a>
   </div>
 
-  <a href="<%= '#reviews/' + business.id + '/new' %>" class="write-review-wrapper">
+  <a href="#reviews/<%= business.id %>/new" class="write-review-wrapper">
     <i class="write-review-icon"> icon</i>
     <span class="write-review-text">Write a Review</span>
   </a>

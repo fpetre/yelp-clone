@@ -6,8 +6,9 @@ json.country business.city.country
 
 
 json.reviews business.reviews do |review|
-    json.(review, :content, :rating, :created_at, :id)
+    json.(review, :content, :rating, :id)
     json.businessname business.name
     json.business_id business.id
     json.user_id review.user_id
+    json.created_at review.created_at.strftime("%m/%d/%y")
 end

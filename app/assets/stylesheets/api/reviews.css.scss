@@ -5,6 +5,16 @@ li.reviews-review {
   padding: 10px 0;
   border-bottom: 1px solid #e5e5e1;
 
+  div.reviews-review-header-rating{
+    float: left;
+  }
+
+  span.reviews-review-header-reviewdate {
+    font-size: 14px;
+    display: block;
+    float: left;
+    color: #555;
+  }
 
   p.reviews-review-content {
     text-align: left;

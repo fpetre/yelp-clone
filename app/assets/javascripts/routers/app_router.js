@@ -43,6 +43,7 @@ YelpClone.Routers.AppRouter = Backbone.Router.extend({
 
   currentCityShow: function () {
     var city = YelpClone.currentCity;
+    city.fetch();
     var cityShowView = new YelpClone.Views.CityShow({model: city});
     this._swapView(cityShowView);
   },

@@ -3,7 +3,7 @@ YelpClone.Models.City = Backbone.Model.extend({
 
   businesses: function () {
     if (!this._businesses) {
-      this._businesses = new YelpClone.Collections.Businesses();
+      this._businesses = new YelpClone.Collections.BusinessesSubset([], {parentCollection: YelpClone.Collections.businesses});
     }
     return this._businesses;
   },

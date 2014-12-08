@@ -8,7 +8,42 @@ YelpClone.Views.ReviewForm = Backbone.View.extend({
     this.listenTo(this.business, "add change sync", this.render);
   },
 
-  events: {"submit form": "submit"},
+  events: {
+    "submit form": "submit",
+    "click label[for=rating-1]": "reviewStarRating",
+    "click label[for=rating-2]": "reviewStarRating",
+    "click label[for=rating-3]": "reviewStarRating",
+    "click label[for=rating-4]": "reviewStarRating",
+    "click label[for=rating-5]": "reviewStarRating"
+  },
+
+  reviewStarRating: function(event){
+
+    if ($(event.currentTarget).attr("for") === "rating-1") {
+      $(event.currentTarget).removeClass().addClass("star-rating-1");
+      var nonTargetLabels = $("[for=rating-2], [for=rating-3], [for=rating-4], [for=rating-5]");
+      nonTargetLabels.removeClass().addClass("star-rating-0");
+    } else if ($(event.currentTarget).attr("for") === "rating-2") {
+      var targetLabels = $("[for=rating-1], [for=rating-2]");
+      var nonTargetLabels = $("[for=rating-3], [for=rating-4], [for=rating-5]");
+      targetLabels.removeClass().addClass("star-rating-2");
+      nonTargetLabels.removeClass().addClass("star-rating-0");
+    } else if ($(event.currentTarget).attr("for") === "rating-3") {
+      var targetLabels = $("[for=rating-1], [for=rating-2], [for=rating-3]");
+      var nonTargetLabels = $("[for=rating-4], [for=rating-5]");
+      targetLabels.removeClass().addClass("star-rating-3");
+      nonTargetLabels.removeClass().addClass("star-rating-0");
+    } else if ($(event.currentTarget).attr("for") === "rating-4") {
+      var targetLabels = $("[for=rating-1], [for=rating-2], [for=rating-3], [for=rating-4]");
+      var nonTargetLabels = $("[for=rating-5]");
+      targetLabels.removeClass().addClass("star-rating-4");
+      nonTargetLabels.removeClass().addClass("star-rating-0");
+    } else if ($(event.currentTarget).attr("for") === "rating-5") {
+      var targetLabels = $("[for=rating-1], [for=rating-2], [for=rating-3], [for=rating-4], [for=rating-5]");
+      targetLabels.removeClass().addClass("star-rating-5");
+
+    }
+  },
 
   submit: function(event){
     var view = this;

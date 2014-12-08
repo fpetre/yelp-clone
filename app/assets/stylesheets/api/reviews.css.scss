@@ -53,28 +53,29 @@ div.review-business-info {
 }
 
 
-div.review-form-rating-wrapper{
+div.review-form-rating-wrapper {
   padding-top: 10px;
   position: relative;
 
 
-  label.stars-rating-label{
+  label.stars-rating-label {
     float: left;
     width: 150px;
     padding-right: 10px;
   }
 
 
-  .stars{
+  .stars {
     float: left;
-    width: 300px;
+    width: 370px;
     border: 1px solid #c41200;
     background-color: #fdffcd;
     padding: 10px 0;
     overflow: hidden;
   }
 
-  .stars input{
+
+  .stars input {
     position: absolute;
     left: -9999px;
     overflow: hidden;
@@ -90,33 +91,61 @@ div.review-form-rating-wrapper{
 
   }
 
-  .stars input:checked ~ label {
-    background: grey;
-    width: 30px;
-    background: image-url('stars_map.png') no-repeat 2px -513px;
 
+  .stars label.star-rating-0 {
+    background: image-url('stars_map.png') no-repeat 14px -513px;
+  }
+
+  .stars label.star-rating-1 {
+    background: image-url('stars_map.png') no-repeat 14px -538px;
+  }
+
+  .stars label.star-rating-2 {
+    background: image-url('stars_map.png') no-repeat 14px -588px;
+  }
+
+  .stars label.star-rating-3 {
+    background: image-url('stars_map.png') no-repeat 14px -638px;
+  }
+
+  .stars label.star-rating-4 {
+    background: image-url('stars_map.png') no-repeat 14px -688px;
+  }
+
+  .stars label.star-rating-5 {
+    background: image-url('stars_map.png') no-repeat 14px -738px;
   }
 
 
-  .stars input:checked + label {
-    background: yellow;
-    background: image-url('stars_map.png') no-repeat 4px -637px;
-  }
-
-
-
-  .stars:hover input ~ label,
-  {
-    background: yellow;
-    background: image-url('stars_map.png') no-repeat 12px -637px;
-  }
-
+  //
+  // .stars input:checked ~ label {
+  //   background: grey;
+  //   width: 30px;
+  //   background: image-url('stars_map.png') no-repeat 2px -513px;
+  //
+  // }
+  //
+  //
+  // .stars input:checked + label {
+  //   background: yellow;
+  //   background: image-url('stars_map.png') no-repeat 4px -637px;
+  // }
+  //
+  //
+  //
+  // .stars:hover input ~ label {
+  //   background: yellow;
+  //   background: image-url('stars_map.png') no-repeat 12px -637px;
+  //
+  // }
+  //
   .stars label > span.rating-text {
     display: none;
     font-size: 12px;
     font-style: italic;
     position: absolute;
-    right: 0px;
+    left: 370px;
+    top: 27px;
 
   }
 
@@ -125,13 +154,13 @@ div.review-form-rating-wrapper{
 
   }
 
-
-  .stars.stars label:hover ~ label {
-
-    background: grey;
-    width: 30px;
-    background: image-url('stars_map.png') no-repeat 2px -513px;
-  }
+  //
+  // .stars.stars label:hover ~ label {
+  //
+  //   background: grey;
+  //   width: 30px;
+  //   background: image-url('stars_map.png') no-repeat 2px -513px;
+  // }
 
 }
 

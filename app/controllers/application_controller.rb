@@ -21,16 +21,17 @@ class ApplicationController < ActionController::Base
     end
 
     def current_city
-      if request.location
-        city_name = request.location.city
-        if city = City.includes(:businesses => :reviews).find_by_city_name(city_name)
-          @current_city = city
-        else
-          @current_city = City.includes(:businesses => :reviews).find_by_city_name("Brooklyn")
-        end
-      else
-        @current_city = City.includes(:businesses => :reviews).find_by_city_name("Brooklyn")
-      end
+      @current_city = City.includes(:businesses => :reviews).find_by_city_name("Brooklyn")
+      # if request.location
+      #   city_name = request.location.city
+      #   if city = City.includes(:businesses => :reviews).find_by_city_name(city_name)
+      #     @current_city = city
+      #   else
+      #     @current_city = City.includes(:businesses => :reviews).find_by_city_name("Brooklyn")
+      #   end
+      # else
+      #   @current_city = City.includes(:businesses => :reviews).find_by_city_name("Brooklyn")
+      # end
     end
 
     def current_user
